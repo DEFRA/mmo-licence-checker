@@ -1,0 +1,71 @@
+{% extends "template.njk" %}
+{% from "phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "back-link/macro.njk" import govukBackLink %}
+
+{% block head %}
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125588756-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125588756-1');
+  </script>
+
+  <!--[if !IE 8]><!-->
+    <link href="{{ assetPath }}/stylesheets/application.css" rel="stylesheet" />
+  <!--<![endif]-->
+
+  {# For Internet Explorer 8, you need to compile specific stylesheet #}
+  {# see https://github.com/alphagov/govuk-frontend/blob/master/docs/installation/supporting-internet-explorer-8.md #}
+  <!--[if IE 8]>
+    <link href="{{ assetPath }}/govuk-frontend/all-ie8.css" rel="stylesheet" />
+  <![endif]-->
+
+  {# For older browsers to allow them to recognise HTML5 elements such as `<header>` #}
+  <!--[if lt IE 9]>
+    <script src="/html5-shiv/html5shiv.js"></script>
+  <![endif]-->
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "govuk-width-container",
+    serviceName: serviceName,
+    serviceUrl: serviceUrl
+  }) }}
+
+{% endblock %}
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "alpha"
+    },
+    html: 'This service is a proof of concept. The results produced should not be used to inform genuine marine licence requirement decisions at this stage. You are encouraged to provide feedback about your experience via the link provided.'
+  }) }}
+  {{ govukBackLink({
+    href: "javascript:window.history.go(-1)",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">Default page template</h1>
+{% endblock %}
+
+{% block bodyEnd %}
+  {# Run JavaScript at end of the <body>, to avoid blocking the initial render. #}
+  <script src="{{ assetPath }}/all.js"></script>
+  <script src="{{ assetPath }}/ukaddressfield.js"></script>
+  <script>window.GOVUKFrontend.initAll()</script>
+  {% if BROWSER_REFRESH_URL %}
+    <script src="{{ BROWSER_REFRESH_URL }}"></script>
+  {% endif %}
+{% endblock %}
+
