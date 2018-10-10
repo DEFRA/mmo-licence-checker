@@ -79,7 +79,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -93,7 +93,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -107,7 +107,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -121,7 +121,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -135,7 +135,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -149,7 +149,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -163,7 +163,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -177,7 +177,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -191,7 +191,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -205,7 +205,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -219,7 +219,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -233,7 +233,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -247,7 +247,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -261,7 +261,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -275,7 +275,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -289,7 +289,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -303,7 +303,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -317,7 +317,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -331,7 +331,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -345,7 +345,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -359,7 +359,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -373,7 +373,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -387,7 +387,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -401,7 +401,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -415,7 +415,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -429,7 +429,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -443,7 +443,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -457,7 +457,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -471,7 +471,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -485,7 +485,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -499,7 +499,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -513,7 +513,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -527,7 +527,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -541,7 +541,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -555,7 +555,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -569,7 +569,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -583,7 +583,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -597,7 +597,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -611,7 +611,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is not required"
@@ -625,7 +625,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence not required"
@@ -643,7 +643,7 @@
         },
         {
           "type": "Para",
-          "content": "<a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
         }
       ],
       "title": "Licence is required"

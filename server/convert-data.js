@@ -105,7 +105,7 @@ module.exports = (mmoData) => {
       // Add PDF Link & start again link
       page.components.push({
         type: 'Para',
-        content: '<a href="/pdf">Download PDF</a><br><a href="/clear-session">Start again</a>'
+        content: '<a class="pull-right" href="/feedback">Provide feedback</a><a href="/pdf">Download PDF</a><br><a href="/clear-session">Start again</a>'
       })
     }
 
