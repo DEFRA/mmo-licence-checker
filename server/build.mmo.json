@@ -1,10 +1,6 @@
 {
   "sections": [
     {
-      "name": "checkBeforeStart",
-      "title": "Check before you start"
-    },
-    {
       "name": "elsewhereDeposit",
       "title": "Deposit elsewhere in the world"
     },
@@ -40,7 +36,6 @@
   "pages": [
     {
       "path": "/",
-      "section": "checkBeforeStart",
       "components": [
         {
           "type": "RadiosField",
@@ -240,6 +235,20 @@
     },
     {
       "path": "/licence-not-required-exemption-available-article-17",
+      "components": [
+        {
+          "type": "Html",
+          "content": "<div class=\"govuk-prose-scope\"><p>Based on the information provided your activity is one that meets the terms of an marine licence exemption set out in Article 17 of the Marine licence (exempted Activities) Order and a marine licence is therefore not required. This exemption is subject to the requirement that notification of the intention to carry on the activity is given to the MMO prior to the commencement of the activity.<p></div>"
+        },
+        {
+          "type": "Para",
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+        }
+      ],
+      "title": "Licence is not required"
+    },
+    {
+      "path": "/licence-not-required-exemption-available-article-17B",
       "components": [
         {
           "type": "Html",
@@ -635,11 +644,7 @@
       "components": [
         {
           "type": "Html",
-          "content": "<div class=\"govuk-prose-scope\"><p>Based on the information provided the activity requires a\r\nlicence. No exemption is available and the activity is not suitable for self-service licensing.<p></div>"
-        },
-        {
-          "type": "Html",
-          "content": "<div class=\"govuk-prose-scope\"><p><a href=\"https://www.gov.uk/apply-marine-licence\">Apply for a marine licence</a><p></div>"
+          "content": "<div class=\"govuk-prose-scope\"><p>Based on the information provided the activity requires a\r\nlicence. No exemption is available and the activity is not suitable for self-service licensing.\r\n<br>\r\n<br>\r\n<a href=\"#\">Apply for a marine licence</a><p></div>"
         },
         {
           "type": "Para",
@@ -650,13 +655,12 @@
     },
     {
       "path": "/jurisdiction",
-      "section": "checkBeforeStart",
       "components": [
         {
           "type": "RadiosField",
           "name": "jurisdiction",
           "title": "Will your activity take place?",
-          "hint": "Not sure? Use the MMO’s <a href=\"http://defra.maps.arcgis.com/apps/webappviewer/index.html?id=6d5a7b3a1f07440f947d1e31bfaa7d38\" target=\"_blank\">interactive map</a> to find out",
+          "hint": "Not sure? Use the MMO’s <a href=\"http://defra.maps.arcgis.com/apps/webappviewer/ index.html?id=6d5a7b3a1f07440f947d1e31bfaa7d38\">interactive map</a> to find out",
           "options": {
             "list": "_2"
           }
@@ -673,15 +677,7 @@
         },
         {
           "path": "/licence-not-required-devolved",
-          "if": "jurisdiction == 'northernIrishInshoreWaters'"
-        },
-        {
-          "path": "/licence-not-required-devolved",
-          "if": "jurisdiction == 'welshWaters'"
-        },
-        {
-          "path": "/licence-not-required-devolved",
-          "if": "jurisdiction == 'scottishWaters'"
+          "if": "jurisdiction == 'otherUkWaters'"
         },
         {
           "path": "/elsewhere-in-the-world/activity-type",
@@ -691,14 +687,14 @@
     },
     {
       "path": "/activity-type",
-      "section": "checkBeforeStart",
       "components": [
         {
           "type": "RadiosField",
           "name": "activityType",
           "title": "What type of activity will be undertaken?",
           "options": {
-            "list": "_3"
+            "list": "_3",
+            "bold": true
           }
         }
       ],
@@ -1266,10 +1262,6 @@
         {
           "path": "/construction/new/miscellaneous",
           "if": "newActivityType == 'miscellaneous'"
-        },
-        {
-          "path": "/licence-required-no-exemption",
-          "if": "newActivityType == 'other'"
         }
       ]
     },
@@ -1710,7 +1702,8 @@
           "name": "activityType",
           "title": "What is the purpose of your activity?",
           "options": {
-            "list": "_18"
+            "list": "_18",
+            "bold": true
           }
         }
       ],
@@ -1752,7 +1745,7 @@
         {
           "type": "RadiosField",
           "name": "maintenanceActivityType",
-          "title": "Maintenance activity",
+          "title": "What does the activity relate to?",
           "options": {
             "list": "_19"
           }
@@ -1956,7 +1949,7 @@
         {
           "type": "YesNoField",
           "name": "maintenanceHarbourWorksBoundaries",
-          "title": "Will the activity be carried out within the boundaries of the works being maintained?"
+          "title": "Will the activity be carried out within the boundaries of the existing works?"
         }
       ],
       "next": [
@@ -1996,7 +1989,7 @@
         {
           "type": "YesNoField",
           "name": "maintenanceCablesPipelines",
-          "title": "Does the activity relate to the inspection or repair of an exisiting cable or pipeline?"
+          "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline?"
         }
       ],
       "next": [
@@ -2076,7 +2069,7 @@
         {
           "type": "RadiosField",
           "name": "fishingActivityType",
-          "title": "Fishing activity",
+          "title": "What does the activity relate to?",
           "options": {
             "list": "_21"
           }
@@ -2222,7 +2215,8 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationActivityType",
           "title": "Emergency, safety, pollution response, and accident investigation activity",
           "options": {
-            "list": "_24"
+            "list": "_24",
+            "bold": true
           }
         }
       ],
@@ -2328,7 +2322,7 @@
         {
           "type": "YesNoField",
           "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCablesPipelines",
-          "title": "Does the activity relate to the inspection or repair of an exisiting cable or pipeline"
+          "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline"
         }
       ],
       "next": [
@@ -2906,7 +2900,8 @@
           "name": "markerMooringPontoonAidToNavigationTemporaryMarkerLse",
           "title": "Is the activity",
           "options": {
-            "list": "_31"
+            "list": "_31",
+            "bold": true
           }
         }
       ],
@@ -4040,8 +4035,8 @@
         {
           "type": "YesNoField",
           "name": "isFromSeaBed",
-          "title": "Is the substance or object to be removed on the seabed?",
-          "hint": "‘Seabed’ comprises the ground under the sea including anything laying on it such as a wreck"
+          "title": "Is the substance or object to be removed from the seabed?",
+          "hint": "‘Seabed’ comprises the intertidal area and includes the ground under the sea including anything laying on it such as a wreck"
         }
       ],
       "next": [
@@ -4103,7 +4098,8 @@
           "name": "activityType",
           "title": "What is the purpose of your activity?",
           "options": {
-            "list": "_49"
+            "list": "_49",
+            "bold": true
           }
         }
       ],
@@ -4929,7 +4925,7 @@
         {
           "type": "YesNoField",
           "name": "maintenanceHarbourWorksBoundaries",
-          "title": "Will the activity be carried out within the boundaries of the works being maintained?"
+          "title": "Will the activity be carried out within the boundaries of the existing works?"
         }
       ],
       "next": [
@@ -4969,7 +4965,7 @@
         {
           "type": "YesNoField",
           "name": "maintenanceCablesPipelines",
-          "title": "Does the activity relate to the inspection or repair of an exisiting cable or pipeline?"
+          "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline?"
         }
       ],
       "next": [
@@ -5459,7 +5455,8 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationActivityType",
           "title": "What does the activity relate to?",
           "options": {
-            "list": "_68"
+            "list": "_68",
+            "bold": true
           }
         }
       ],
@@ -5549,7 +5546,7 @@
         {
           "type": "YesNoField",
           "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCablesPipelines",
-          "title": "Does the activity relate to the inspection or repair of an exisiting cable or pipeline"
+          "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline"
         }
       ],
       "next": [
@@ -6213,7 +6210,7 @@
         {
           "type": "YesNoField",
           "name": "navigationalDredgingMaintenance",
-          "title": "Will the dredging undertaken at a site and at a depth where at least one previous dredging campaign has taken place in the last 10 years?"
+          "title": "Will the dredging be undertaken at a site and at a depth where at least one previous dredging campaign has taken place in the last 10 years?"
         }
       ],
       "next": [
@@ -6297,7 +6294,7 @@
         {
           "type": "YesNoField",
           "name": "navigationalDredgingPreviousLast12MonthsQuantity",
-          "title": "Does the quantity of material dredged at the site in the previous 12 month combined with the amount proposed to be dredged exceed 1500m3?"
+          "title": "Does the quantity of material dredged at the site in the previous 12 months combined with the amount proposed to be dredged exceed 1500m3?"
         }
       ],
       "next": [
@@ -6607,7 +6604,8 @@
           "name": "emergencyActivityType",
           "title": "What does the activity relate to?",
           "options": {
-            "list": "_84"
+            "list": "_84",
+            "bold": true
           }
         }
       ],
@@ -6681,7 +6679,7 @@
         {
           "type": "YesNoField",
           "name": "emergencyCablesPipelines",
-          "title": "Does the activity relate to the inspection or repair of an exisiting cable or pipeline"
+          "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline"
         }
       ],
       "next": [
@@ -7076,7 +7074,6 @@
     },
     {
       "path": "/elsewhere-in-the-world/activity-type",
-      "section": "checkBeforeStart",
       "components": [
         {
           "type": "RadiosField",
@@ -7099,6 +7096,10 @@
         {
           "path": "/elsewhere-in-the-world/incineration",
           "if": "activityTypeElsewhere == 'incineration'"
+        },
+        {
+          "path": "/licence-not-required",
+          "if": "activityTypeElsewhere == 'other'"
         }
       ]
     },
@@ -7309,16 +7310,8 @@
           "value": "northernIrishOffshoreWaters"
         },
         {
-          "text": "In Northern Irish inshore waters",
-          "value": "northernIrishInshoreWaters"
-        },
-        {
-          "text": "In Welsh waters",
-          "value": "welshWaters"
-        },
-        {
-          "text": "In Scottish waters",
-          "value": "scottishWaters"
+          "text": "In other UK waters",
+          "value": "otherUkWaters"
         },
         {
           "text": "Somewhere else in the world",
@@ -7332,8 +7325,9 @@
       "type": "string",
       "items": [
         {
-          "text": "Construction (including alteration and improvement of existing works)",
-          "value": "construction"
+          "text": "Construction",
+          "value": "construction",
+          "description": "including alteration and improvement of existing works"
         },
         {
           "text": "Deposit of a substance or object",
@@ -7345,7 +7339,8 @@
         },
         {
           "text": "Dredging",
-          "value": "dredging"
+          "value": "dredging",
+          "description": "Any form of dredging whether or not involving the removal of material from the sea or sea bed. Please note: The disposal of dredged material at is considered to be secondary 'deposit' activity. No exemptions are available for disposal of dredged material"
         },
         {
           "text": "Incinerate a substance or object",
@@ -7382,7 +7377,7 @@
       "type": "string",
       "items": [
         {
-          "text": "Mooring or aid to navigation",
+          "text": "Moorings or aids to navigation",
           "value": "mooringOrNavigation"
         },
         {
@@ -7398,7 +7393,7 @@
           "value": "coastalProtectionDrainageOrFloodDefence"
         },
         {
-          "text": "An activity carried on wholly under the sea in connection with the construction or operation of a bored tunnel",
+          "text": "Bored tunnels",
           "value": "boredTunnel"
         },
         {
@@ -7444,7 +7439,7 @@
           "value": "harbourAuthority"
         },
         {
-          "text": "A lighthouse authority or someone on behalf of a harbour authority",
+          "text": "A lighthouse authority or someone on behalf of a lighthouse authority",
           "value": "lighthouseAuthority"
         },
         {
@@ -7508,24 +7503,20 @@
       "type": "string",
       "items": [
         {
-          "text": "Providing a mooring or aid to navigation",
+          "text": "Moorings or aids to navigation",
           "value": "mooringOrNavigation"
         },
         {
-          "text": "Providing a pontoon",
+          "text": "Pontoons",
           "value": "pontoon"
         },
         {
-          "text": "An emergency activity in response to flood or flood risk",
+          "text": "Flood or flood risk",
           "value": "floodEmergency"
         },
         {
-          "text": "Miscellaneous - Bored tunnels, deepsea mining and scheduled works under the Crossrail Act",
+          "text": "Miscellaneous",
           "value": "miscellaneous"
-        },
-        {
-          "text": "Other",
-          "value": "other"
         }
       ]
     },
@@ -7566,7 +7557,7 @@
           "value": "harbourAuthority"
         },
         {
-          "text": "A lighthouse authority or someone on behalf of a harbour authority",
+          "text": "A lighthouse authority or someone on behalf of a lighthouse authority",
           "value": "lighthouseAuthority"
         },
         {
@@ -7669,31 +7660,37 @@
       "type": "string",
       "items": [
         {
-          "text": "Markers, moorings, pontoons and aids to navigations",
-          "value": "markersMooringsOrPontoons"
+          "text": "Markers",
+          "value": "markersMooringsOrPontoons",
+          "description": "Markers, moorings, pontoons and aids to navigations"
         },
         {
-          "text": "Scientific research - instruments, associated equipment and tracers",
-          "value": "scientificResearch"
+          "text": "Scientific research",
+          "value": "scientificResearch",
+          "description": "Scientific instruments, associated equipment and tracers"
         },
         {
-          "text": "Maintenance - existing structures or assets",
-          "value": "maintenance"
+          "text": "Maintenance",
+          "value": "maintenance",
+          "description": "existing structures or assets"
         },
         {
-          "text": "Emergency – safety, pollution response and accident investigation",
-          "value": "emergency"
+          "text": "Emergency",
+          "value": "emergency",
+          "description": "safety, pollution response and accident investigation"
         },
         {
-          "text": "Fishing (including shellfish)",
-          "value": "fishing"
+          "text": "Fishing",
+          "value": "fishing",
+          "description": "including shellfish"
         },
         {
-          "text": "Vessels – Launching of vessels, rights of foreign vessels, deposits in the course of normal navigation, deposits in the course of aggregate or mineral dredging and dismantling of ships",
-          "value": "vessels"
+          "text": "Vessels",
+          "value": "vessels",
+          "description": "Launching of vessels, rights of foreign vessels, deposits in the course of normal navigation, deposits in the course of aggregate or mineral dredging and dismantling of ships"
         },
         {
-          "text": "Miscellaneous - Defence activities, licensed deepsea mining and works authorised under the Crossrail Act 2008",
+          "text": "Miscellaneous",
           "value": "defenceMiningCrossrail"
         }
       ]
@@ -7704,15 +7701,15 @@
       "type": "string",
       "items": [
         {
-          "text": "Maintenance of coast protection, drainage or flood defence works",
+          "text": "Coast protection, drainage or flood defence works",
           "value": "coastalProtectionDrainageFloodDefence"
         },
         {
-          "text": "Emergency works in response to flood or flood risk",
+          "text": "Flood or flood risk emergency",
           "value": "floodEmergency"
         },
         {
-          "text": "Maintenance of harbour works",
+          "text": "Harbour works",
           "value": "harbourWorkMaintenance"
         },
         {
@@ -7819,8 +7816,9 @@
           "value": "coastguardActivites"
         },
         {
-          "text": "Flares - Safety purposes and training",
-          "value": "flares"
+          "text": "Flares",
+          "value": "flares",
+          "description": "Safety purposes and training"
         },
         {
           "text": "Salvage Operation",
@@ -8008,19 +8006,22 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a European site",
-          "value": "europeanSiteTemporaryMarkers"
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
+          "value": "europeanSiteTemporaryMarkers",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a Ramsar site",
-          "value": "ramsarSiteTemporaryMarkers"
+          "text": "Likely to have a significant effect on a Ramsar site",
+          "value": "ramsarSiteTemporaryMarkers",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "value": "mczTemporaryMarkers"
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone ?",
+          "value": "mczTemporaryMarkers",
+          "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
-          "text": "Unlikely to have any relevant effect  on any sites specified above",
+          "text": "Unlikely to have any relevant effect on any sites specified above",
           "value": "otherTemporaryMarkers"
         }
       ]
@@ -8111,7 +8112,7 @@
           "value": "harbourAuthority"
         },
         {
-          "text": "A lighthouse authority or someone on behalf of a harbour authority",
+          "text": "A lighthouse authority or someone on behalf of a lighthouse authority",
           "value": "lighthouseAuthority"
         },
         {
@@ -8160,11 +8161,11 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a European site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
           "value": "europeanSiteScientificEquipment"
         },
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a Ramsar site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
           "value": "ramsarSiteScientificEquipment"
         },
         {
@@ -8183,11 +8184,11 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a European site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
           "value": "europeanSiteTracers"
         },
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a Ramsar site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
           "value": "ramsarSiteTracers"
         },
         {
@@ -8218,7 +8219,7 @@
           "value": "aggregateDredging"
         },
         {
-          "text": "Dismantlign of ships",
+          "text": "Dismantling of ships",
           "value": "dismantlingShips"
         },
         {
@@ -8386,27 +8387,30 @@
           "value": "markersMooringsOrPontoons"
         },
         {
-          "text": "Scientific research - instruments, associated equipment, samples and testing and analysis",
-          "value": "scientificResearch"
+          "text": "Scientific research",
+          "value": "scientificResearch",
+          "description": "instruments, associated equipment, samples and testing and analysis"
         },
         {
-          "text": "Maintenance - existing structures or assets",
-          "value": "maintenance"
+          "text": "Maintenance",
+          "value": "maintenance",
+          "description": "existing structures or assets"
         },
         {
           "text": "Dead animals, litter, obstructions or accidental deposits",
           "value": "waste"
         },
         {
-          "text": "Emergency – safety, prevention of pollution and accident investigation",
-          "value": "emergency"
+          "text": "Emergency",
+          "value": "emergency",
+          "description": "safety, prevention of pollution and accident investigation"
         },
         {
           "text": "Fishing (including shellfish)",
           "value": "fishing"
         },
         {
-          "text": "Miscellaneous - Defence activities, deep sea mining, scheduled works under the Crossrail act or Rights of foreign vessels and dismantling of ships",
+          "text": "Miscellaneous",
           "value": "miscellaneous"
         }
       ]
@@ -8547,7 +8551,7 @@
           "value": "harbourAuthority"
         },
         {
-          "text": "A lighthouse authority or someone on behalf of a harbour authority",
+          "text": "A lighthouse authority or someone on behalf of a lighthouse authority",
           "value": "lighthouseAuthority"
         },
         {
@@ -8596,11 +8600,11 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a European site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
           "value": "europeanSiteScientificEquipment"
         },
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a Ramsar site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
           "value": "ramsarSiteScientificEquipment"
         },
         {
@@ -8619,11 +8623,11 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a European site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
           "value": "europeanSiteScientificEquipment"
         },
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a Ramsar site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
           "value": "ramsarSiteScientificEquipment"
         },
         {
@@ -8692,7 +8696,7 @@
           "value": "litterSeaweed"
         },
         {
-          "text": "Accidental Deposits",
+          "text": "Accidental deposits",
           "value": "accidentalDeposits"
         },
         {
@@ -8711,11 +8715,11 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a European site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
           "value": "europeanSiteScientificEquipment"
         },
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a Ramsar site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
           "value": "ramsarSiteScientificEquipment"
         },
         {
@@ -8734,11 +8738,11 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a European site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
           "value": "europeanSiteScientificEquipment"
         },
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a Ramsar site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
           "value": "ramsarSiteScientificEquipment"
         },
         {
@@ -8757,11 +8761,11 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a European site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
           "value": "europeanSiteScientificEquipment"
         },
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a Ramsar site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
           "value": "ramsarSiteScientificEquipment"
         },
         {
@@ -8815,8 +8819,9 @@
           "value": "cablesPipelines"
         },
         {
-          "text": "Coastguard activities - safety purposes and training",
-          "value": "coastguardActivites"
+          "text": "Coastguard activities",
+          "value": "coastguardActivites",
+          "description": "safety purposes and training"
         },
         {
           "text": "Salvage Operation",
@@ -9057,7 +9062,7 @@
           "value": "safetyOrTraining"
         },
         {
-          "text": "Miscellaneous - Licensed deepsea mining and scheduled works under the Crossrail Act",
+          "text": "Miscellaneous",
           "value": "miscellaneous"
         }
       ]
@@ -9099,7 +9104,7 @@
           "value": "lessThan501"
         },
         {
-          "text": "501m3 or more",
+          "text": "More than 500m3",
           "value": "moreThan500"
         }
       ]
@@ -9110,11 +9115,11 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a European site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
           "value": "europeanSiteNavigationalDredging"
         },
         {
-          "text": "Likely (either alone or in combination withother plans and projects) to have a significant effect on a Ramsar site",
+          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
           "value": "ramsarSiteNavigationalDredging"
         },
         {
@@ -9179,8 +9184,9 @@
           "value": "cablesPipelines"
         },
         {
-          "text": "Coastguard activities - safety purposes and training",
-          "value": "coastguardActivites"
+          "text": "Coastguard activities",
+          "value": "coastguardActivites",
+          "description": "safety purposes and training"
         },
         {
           "text": "Salvage Operation",
@@ -9367,7 +9373,7 @@
           "value": "incineration"
         },
         {
-          "text": "Something else",
+          "text": "Other",
           "value": "other"
         }
       ]
