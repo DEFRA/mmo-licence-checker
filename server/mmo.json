@@ -375,7 +375,7 @@
     "/jurisdiction": {
       "title": "Will your activity take place?",
       "name": "jurisdiction",
-      "hint": "Not sure? Use the MMO’s <a href=\"http://defra.maps.arcgis.com/apps/webappviewer/ index.html?id=6d5a7b3a1f07440f947d1e31bfaa7d38\">interactive map</a> to find out",
+      "hint": "Use the MMO’s <a href=\"http://defra.maps.arcgis.com/apps/webappviewer/index.html?id=6d5a7b3a1f07440f947d1e31bfaa7d38\">interactive map</a> to find out if your unsure",
       "options": [
         [
           "englishWaters",
@@ -407,7 +407,7 @@
           "construction",
           "Construction",
           "/construction",
-          "including alteration and improvement of existing works"
+          "Including maintenance, alteration and improvement of existing works"
         ],
         [
           "deposit",
@@ -423,16 +423,16 @@
           "dredging",
           "Dredging",
           "/dredging",
-          "Any form of dredging whether or not involving the removal of material from the sea or sea bed. Please note: The disposal of dredged material is considered to be secondary 'deposit' activity. No exemptions are available for disposal of dredged material at sea"
+          "Any form of dredging whether or not involving the removal of material from the sea or sea bed. Please note: The disposal of dredged material is considered to be secondary 'deposit' activity. No exemptions are available for disposal of dredged material at sea."
         ],
         [
           "incineration",
-          "Incinerate a substance or object",
+          "Incineration of a substance or object",
           "/incineration/method"
         ],
         [
           "depositExplosive",
-          "Use an explosive substance",
+          "Use of an explosive substance",
           "/licence-required-no-exemption"
         ],
         [
@@ -1037,10 +1037,15 @@
       "name": "activityType",
       "options": [
         [
-          "markersMooringsOrPontoons",
+          "markersMooringsAidsToNavigation",
           "Markers",
           "/deposit/markers-moorings-pontoons-aids-to-navigation",
-          "Markers, moorings, pontoons and aids to navigations"
+          "Markers, moorings and aids to navigations"
+        ],
+        [
+          "pontoons",
+          "Pontoons",
+          "/deposit/markers-moorings-pontoons-aids-to-navigation/pontoons"
         ],
         [
           "scientificResearch",
@@ -1058,7 +1063,7 @@
           "emergency",
           "Emergency",
           "/deposit/emergency-safety-pollution-response-accident-investigation",
-          "Safety, pollution response and accident investigation"
+          "Including safety, pollution response and accident investigation"
         ],
         [
           "fishing",
@@ -1344,7 +1349,7 @@
       ]
     }, 
     "/deposit/emergency-safety-pollution-response-accident-investigation": {
-      "title": "Emergency, safety, pollution response, and accident investigation activity",
+      "title": "What does your activity relate to?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestigationActivityType",
       "options": [
@@ -1365,9 +1370,8 @@
         ],
         [
           "flares",
-          "Flares",
-          "/deposit/emergency-safety-pollution-response-accident-investigation/flares",
-          "Safety purposes and training"
+          "Flares - Safety purposes and training",
+          "/deposit/emergency-safety-pollution-response-accident-investigation/flares"
         ],
         [
           "salvageOperation",
@@ -1378,26 +1382,16 @@
           "safetyDirections",
           "Safety directions under the Merchant Shipping Act 1995",
           "/deposit/emergency-safety-pollution-response-accident-investigation/safety-directions"
-        ],  
-        [
-          "equipmentContainControlRecoverOilsEtc",
-          "Equipment to contain, control or recover oils etc",
-          "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-response-equipment"
         ],
         [
-          "marineChemicalMarineOilTreatment",
-          "Marine chemical and marine oil treamtment substances",
-          "/deposit/emergency-safety-pollution-response-accident-investigation/chemical-oil-treatment"
-        ],  
+          "pollutionPreventionAndTreatment",
+          "Pollution prevention and treatment",
+          "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-prevention-treatment"
+        ],
         [
           "dischargeOffshoreChemicalsOil",
           "Discharge of offshore chemicals and oil",
           "/deposit/emergency-safety-pollution-response-accident-investigation/offshore-chemical-oil"
-        ],
-        [
-          "pollutionPreventionPart6MerchanntShippingAct1995",
-          "Pollution prevention - Activities within Part 6 of the Merchant Shipping Act 1995",
-          "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-prevention"
         ],
         [
           "firefighting",
@@ -1578,6 +1572,33 @@
         ]
       ]
     },
+    "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-prevention-treatment": {
+      "title": "What does your activity relate to?",
+      "section": "deposit",
+      "name": "emergencySafetyPollutionResponseAccidentInvestigationPollutionPreventionTreatmeantActivityType",
+      "options": [
+        [
+          "equipmentContainControlRecoverOilsEtc",
+          "Equipment to contain, control or recover oils etc",
+          "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-response-equipment"
+        ],
+        [
+          "marineChemicalMarineOilTreatment",
+          "Marine chemical and marine oil treamtment substances",
+          "/deposit/emergency-safety-pollution-response-accident-investigation/chemical-oil-treatment"
+        ],  
+        [
+          "pollutionPreventionPart6MerchanntShippingAct1995",
+          "Activities within Part 6 of the Merchant Shipping Act 1995",
+          "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-prevention"
+        ],
+        [
+          "other",
+          "Other",
+          "/licence-required-no-exemption"
+        ]
+      ]
+    },
     "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-response-equipment": {
     "title": "Is the equipment to be deposited for the purpose of controlling, containing or recovering oil, a mixture containing oil, chemicals, flotsam or algae blooms?",
       "section": "deposit",
@@ -1687,7 +1708,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation": {
-      "title": "Markers, moorings, pontoons and aids to navigation activity",
+      "title": "Markers, moorings and aids to navigation activity",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationActivityType",
       "options": [
@@ -1705,11 +1726,6 @@
           "mooringsAidsToNavigation",
           "Moorings and aids to navigation",
           "/deposit/markers-moorings-pontoons-aids-to-navigation/moorings"
-        ],
-        [
-          "pontoons",
-          "Pontoons",
-          "/deposit/markers-moorings-pontoons-aids-to-navigation/pontoons"
         ],
         [
           "diverTrails",
@@ -2521,10 +2537,15 @@
       "name": "activityType",
       "options": [
         [
-          "markersMooringsOrPontoons",
+          "markersMooringsAndAidToNavigation",
           "Markers",
           "/removal/markers-moorings-pontoons-aids-to-navigation",
           "Moorings, pontoons and aids to navigation"
+        ],
+        [
+          "pontoons",
+          "Pontoons",
+          "/removal/markers-moorings-pontoons-aids-to-navigation/pontoons"
         ],
         [
           "scientificResearch",
@@ -2547,7 +2568,7 @@
           "emergency",
           "Emergency",
           "/removal/emergency-safety-pollution-response-accident-investigation",
-          "safety, prevention of pollution and accident investigation"
+          "Including safety, pollution response and accident investigation"
         ],
         [
           "fishing",
@@ -2563,9 +2584,9 @@
       ]
     },
     "/removal/markers-moorings-pontoons-aids-to-navigation": {
-      "title": "Markers, moorings, pontoons and aids to navigation activity",
+      "title": "Markers, moorings and aids to navigation activity",
       "section": "removal",
-      "name": "markerMooringPontoonAidToNavigationActivityType",
+      "name": "markerMooringAidToNavigationActivityType",
       "options": [
         [
           "temporaryMarkers",
@@ -2581,11 +2602,6 @@
           "mooringsAidsToNavigation",
           "Moorings and aids to navigation",
           "/removal/markers-moorings-pontoons-aids-to-navigation/moorings"
-        ],
-        [
-          "pontoons",
-          "Pontoons",
-          "/removal/markers-moorings-pontoons-aids-to-navigation/pontoons"
         ],
         [
           "diverTrails",
@@ -3392,9 +3408,8 @@
         ],
         [
           "coastguardActivites",
-          "Coastguard activities",
-          "/removal/emergency-safety-pollution-response-accident-investigation/coastguard",
-          "safety purposes and training"
+          "Coastguard activities - safety purposes and training",
+          "/removal/emergency-safety-pollution-response-accident-investigation/coastguard"
         ],
         [
           "salvageOperation",
