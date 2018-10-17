@@ -75,6 +75,7 @@ function getPdfDef (model, state) {
   })
 
   const def = {
+    watermark: { text: 'Test Document', color: 'blue', opacity: 0.3, bold: true, italics: false },
     info: {
       title: 'Marine Management Organisation - DEFRA',
       author: 'Marine Management Organisation (DEFRA)',
