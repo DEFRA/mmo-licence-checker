@@ -3405,7 +3405,8 @@
           "name": "scientificResearchScientificEquipmentLse",
           "title": "Is the activity",
           "options": {
-            "list": "_39"
+            "list": "_39",
+            "bold": true
           }
         }
       ],
@@ -3537,7 +3538,8 @@
           "name": "scientificResearchTracersReagentsLse",
           "title": "Is the activity",
           "options": {
-            "list": "_40"
+            "list": "_40",
+            "bold": true
           }
         }
       ],
@@ -4036,7 +4038,7 @@
           "type": "YesNoField",
           "name": "isFromSeaBed",
           "title": "Is the substance or object to be removed from the seabed?",
-          "hint": "‘Seabed’ comprises the intertidal area and includes the ground under the sea including anything laying on it such as a wreck"
+          "hint": "‘Seabed’ comprises the intertidal area below Mean High Water Springs mark and the ground under the sea including anything laying on it such as a wreck"
         }
       ],
       "next": [
@@ -4643,7 +4645,8 @@
           "name": "scientificResearchScientificEquipmentLse",
           "title": "Is the activity",
           "options": {
-            "list": "_59"
+            "list": "_59",
+            "bold": true
           }
         }
       ],
@@ -4775,7 +4778,8 @@
           "name": "scientificResearchSamplesLse",
           "title": "Is the activity",
           "options": {
-            "list": "_60"
+            "list": "_60",
+            "bold": true
           }
         }
       ],
@@ -5123,7 +5127,8 @@
           "name": "wasteDeadAnimalLse",
           "title": "Is the activity",
           "options": {
-            "list": "_64"
+            "list": "_64",
+            "bold": true
           }
         }
       ],
@@ -5198,7 +5203,7 @@
       ],
       "next": [
         {
-          "path": "/removal/waste/dead-animals/mpa-management"
+          "path": "/removal/waste/litter-seaweed/mpa-management"
         },
         {
           "path": "/licence-not-required-exemption-available-article-21",
@@ -5235,7 +5240,8 @@
           "name": "wasteLitterSeaweedLse",
           "title": "Is the activity",
           "options": {
-            "list": "_65"
+            "list": "_65",
+            "bold": true
           }
         }
       ],
@@ -5367,7 +5373,8 @@
           "name": "wasteAccidentalDepositsLse",
           "title": "Is the activity",
           "options": {
-            "list": "_66"
+            "list": "_66",
+            "bold": true
           }
         }
       ],
@@ -6230,7 +6237,7 @@
         {
           "type": "YesNoField",
           "name": "navigationalDredgingPreviousPurpose",
-          "title": "Was the purpose of the previous dredge to enable the continued use of the area of sea by vessels??"
+          "title": "Was the purpose of the previous dredge to enable the continued use of the area of sea by vessels?"
         }
       ],
       "next": [
@@ -6376,7 +6383,8 @@
           "name": "navigationalDredgingLse",
           "title": "Is the activity",
           "options": {
-            "list": "_81"
+            "list": "_81",
+            "bold": true
           }
         }
       ],
@@ -7154,6 +7162,14 @@
       ],
       "next": [
         {
+          "path": "/licence-required-no-exemption",
+          "if": "loaded == 'inUk'"
+        },
+        {
+          "path": "/licence-required-no-exemption",
+          "if": "loaded == 'inUkMLA'"
+        },
+        {
           "path": "/licence-not-required",
           "if": "loaded == 'none'"
         }
@@ -7340,14 +7356,14 @@
         {
           "text": "Dredging",
           "value": "dredging",
-          "description": "Any form of dredging whether or not involving the removal of material from the sea or sea bed. Please note: The disposal of dredged material at is considered to be secondary 'deposit' activity. No exemptions are available for disposal of dredged material"
+          "description": "Any form of dredging whether or not involving the removal of material from the sea or sea bed. Please note: The disposal of dredged material is considered to be secondary 'deposit' activity. No exemptions are available for disposal of dredged material at sea"
         },
         {
           "text": "Incinerate a substance or object",
           "value": "incineration"
         },
         {
-          "text": "Deposit or use of an explosive substance or object",
+          "text": "Use an explosive substance",
           "value": "depositExplosive"
         },
         {
@@ -7672,17 +7688,17 @@
         {
           "text": "Maintenance",
           "value": "maintenance",
-          "description": "existing structures or assets"
+          "description": "Existing structures or assets"
         },
         {
           "text": "Emergency",
           "value": "emergency",
-          "description": "safety, pollution response and accident investigation"
+          "description": "Safety, pollution response and accident investigation"
         },
         {
           "text": "Fishing",
           "value": "fishing",
-          "description": "including shellfish"
+          "description": "Including shellfish"
         },
         {
           "text": "Vessels",
@@ -8006,22 +8022,22 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
+          "text": "Likely to have a significant effect on a European site?",
           "value": "europeanSiteTemporaryMarkers",
           "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely to have a significant effect on a Ramsar site",
+          "text": "Likely to have a significant effect on a Ramsar site?",
           "value": "ramsarSiteTemporaryMarkers",
           "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone ?",
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
           "value": "mczTemporaryMarkers",
           "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
-          "text": "Unlikely to have any relevant effect on any sites specified above",
+          "text": "Unlikely to have any relevant effect on any sites specified above?",
           "value": "otherTemporaryMarkers"
         }
       ]
@@ -8161,16 +8177,19 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "value": "europeanSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a European site?",
+          "value": "europeanSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "value": "ramsarSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a Ramsar site?",
+          "value": "ramsarSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "value": "mczScientificEquipment"
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "value": "mczScientificEquipment",
+          "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
           "text": "Unlikely to have any relevant effect on any sites specified above",
@@ -8184,16 +8203,19 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "value": "europeanSiteTracers"
+          "text": "Likely to have a significant effect on a European site",
+          "value": "europeanSiteTracers",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "value": "ramsarSiteTracers"
+          "text": "Likely to have a significant effect on a Ramsar site?",
+          "value": "ramsarSiteTracers",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "value": "mczTracers"
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "value": "mczTracers",
+          "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
           "text": "Unlikely to have any relevant effect on any sites specified above",
@@ -8383,18 +8405,19 @@
       "type": "string",
       "items": [
         {
-          "text": "Markers, moorings, pontoons and aids to navigation",
-          "value": "markersMooringsOrPontoons"
+          "text": "Markers",
+          "value": "markersMooringsOrPontoons",
+          "description": "Moorings, pontoons and aids to navigation"
         },
         {
           "text": "Scientific research",
           "value": "scientificResearch",
-          "description": "instruments, associated equipment, samples and testing and analysis"
+          "description": "Instruments, associated equipment, samples and testing and analysis"
         },
         {
           "text": "Maintenance",
           "value": "maintenance",
-          "description": "existing structures or assets"
+          "description": "Existing structures or assets"
         },
         {
           "text": "Dead animals, litter, obstructions or accidental deposits",
@@ -8406,8 +8429,9 @@
           "description": "safety, prevention of pollution and accident investigation"
         },
         {
-          "text": "Fishing (including shellfish)",
-          "value": "fishing"
+          "text": "Fishing",
+          "value": "fishing",
+          "description": "Including shellfish"
         },
         {
           "text": "Miscellaneous",
@@ -8600,16 +8624,19 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "value": "europeanSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a European site?",
+          "value": "europeanSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "value": "ramsarSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a Ramsar site?",
+          "value": "ramsarSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "value": "mczScientificEquipment"
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "value": "mczScientificEquipment",
+          "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
           "text": "Unlikely to have any relevant effect on any sites specified above",
@@ -8623,16 +8650,19 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "value": "europeanSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a European site?",
+          "value": "europeanSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "value": "ramsarSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a Ramsar site?",
+          "value": "ramsarSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "value": "mczScientificEquipment"
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "value": "mczScientificEquipment",
+          "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
           "text": "Unlikely to have any relevant effect on any sites specified above",
@@ -8715,16 +8745,19 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "value": "europeanSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a European site?",
+          "value": "europeanSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "value": "ramsarSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a Ramsar site?",
+          "value": "ramsarSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "value": "mczScientificEquipment"
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "value": "mczScientificEquipment",
+          "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
           "text": "Unlikely to have any relevant effect on any sites specified above",
@@ -8738,16 +8771,19 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "value": "europeanSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a European site?",
+          "value": "europeanSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "value": "ramsarSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a Ramsar site?",
+          "value": "ramsarSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "value": "mczScientificEquipment"
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "value": "mczScientificEquipment",
+          "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
           "text": "Unlikely to have any relevant effect on any sites specified above",
@@ -8761,16 +8797,19 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "value": "europeanSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a European site?",
+          "value": "europeanSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "value": "ramsarSiteScientificEquipment"
+          "text": "Likely to have a significant effect on a Ramsar site?",
+          "value": "ramsarSiteScientificEquipment",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "value": "mczScientificEquipment"
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "value": "mczScientificEquipment",
+          "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
           "text": "Unlikely to have any relevant effect on any sites specified above",
@@ -9115,16 +9154,19 @@
       "type": "string",
       "items": [
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "value": "europeanSiteNavigationalDredging"
+          "text": "Likely to have a significant effect on a European site?",
+          "value": "europeanSiteNavigationalDredging",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "value": "ramsarSiteNavigationalDredging"
+          "text": "Likely to have a significant effect on a Ramsar site?",
+          "value": "ramsarSiteNavigationalDredging",
+          "description": "either alone or in combination with other plans and projects"
         },
         {
-          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "value": "mczNavigationalDredging"
+          "text": "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "value": "mczNavigationalDredging",
+          "description": "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         },
         {
           "text": "Unlikely to have any relevant effect on any sites specified above",

@@ -423,7 +423,7 @@
           "dredging",
           "Dredging",
           "/dredging",
-          "Any form of dredging whether or not involving the removal of material from the sea or sea bed. Please note: The disposal of dredged material at is considered to be secondary 'deposit' activity. No exemptions are available for disposal of dredged material"
+          "Any form of dredging whether or not involving the removal of material from the sea or sea bed. Please note: The disposal of dredged material is considered to be secondary 'deposit' activity. No exemptions are available for disposal of dredged material at sea"
         ],
         [
           "incineration",
@@ -432,7 +432,7 @@
         ],
         [
           "depositExplosive",
-          "Deposit or use of an explosive substance or object",
+          "Use an explosive substance",
           "/licence-required-no-exemption"
         ],
         [
@@ -1052,19 +1052,19 @@
           "maintenance",
           "Maintenance",
           "/deposit/maintenance",
-          "existing structures or assets"
+          "Existing structures or assets"
         ],
         [
           "emergency",
           "Emergency",
           "/deposit/emergency-safety-pollution-response-accident-investigation",
-          "safety, pollution response and accident investigation"
+          "Safety, pollution response and accident investigation"
         ],
         [
           "fishing",
           "Fishing",
           "/deposit/fishing",
-          "including shellfish"
+          "Including shellfish"
         ],
         [
           "vessels",
@@ -1779,25 +1779,25 @@
       "options": [
         [
           "europeanSiteTemporaryMarkers",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
+          "Likely to have a significant effect on a European site?",
           "/licence-required-no-exemption",
           "either alone or in combination with other plans and projects"
         ],
         [
           "ramsarSiteTemporaryMarkers",
-          "Likely to have a significant effect on a Ramsar site",
+          "Likely to have a significant effect on a Ramsar site?",
           "/licence-required-no-exemption",
           "either alone or in combination with other plans and projects"
         ],
         [
           "mczTemporaryMarkers",
-          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone ?",
+          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
           "/licence-required-no-exemption",
           "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         ],
         [
           "otherTemporaryMarkers",
-          "Unlikely to have any relevant effect on any sites specified above",
+          "Unlikely to have any relevant effect on any sites specified above?",
           "/licence-not-required-exemption-available-article-26a"
         ]
       ]
@@ -2084,18 +2084,21 @@
       "options": [
         [
           "europeanSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a European site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "ramsarSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a Ramsar site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "mczScientificEquipment",
-          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "/licence-required-no-exemption"
+          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "/licence-required-no-exemption",
+          "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         ],
         [
           "otherScientificEquipment",
@@ -2156,18 +2159,21 @@
       "options": [
         [
           "europeanSiteTracers",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a European site",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "ramsarSiteTracers",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a Ramsar site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "mczTracers",
-          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "/licence-required-no-exemption"
+          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "/licence-required-no-exemption",
+          "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         ],
         [
           "otherTracers",
@@ -2466,7 +2472,7 @@
       "title": "Is the substance or object to be removed from the seabed?",
       "section": "removal",
       "name": "isFromSeaBed",
-      "hint": "‘Seabed’ comprises the intertidal area and includes the ground under the sea including anything laying on it such as a wreck",
+      "hint": "‘Seabed’ comprises the intertidal area below Mean High Water Springs mark and the ground under the sea including anything laying on it such as a wreck",
       "options": [
         "/removal/method",
         "/licence-not-required"
@@ -2516,20 +2522,21 @@
       "options": [
         [
           "markersMooringsOrPontoons",
-          "Markers, moorings, pontoons and aids to navigation",
-          "/removal/markers-moorings-pontoons-aids-to-navigation"
+          "Markers",
+          "/removal/markers-moorings-pontoons-aids-to-navigation",
+          "Moorings, pontoons and aids to navigation"
         ],
         [
           "scientificResearch",
           "Scientific research",
           "/removal/scientific-research",
-          "instruments, associated equipment, samples and testing and analysis"
+          "Instruments, associated equipment, samples and testing and analysis"
         ],
         [
           "maintenance",
           "Maintenance",
           "/removal/maintenance",
-          "existing structures or assets"
+          "Existing structures or assets"
         ],
         [
           "waste",
@@ -2544,8 +2551,9 @@
         ],
         [
           "fishing",
-          "Fishing (including shellfish)",
-          "/removal/fishing"
+          "Fishing",
+          "/removal/fishing",
+          "Including shellfish"
         ],
         [
           "miscellaneous",
@@ -2877,18 +2885,21 @@
       "options": [
         [
           "europeanSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a European site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "ramsarSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a Ramsar site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "mczScientificEquipment",
-          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "/licence-required-no-exemption"
+          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "/licence-required-no-exemption",
+          "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         ],
         [
           "otherScientificEquipment",
@@ -2949,18 +2960,21 @@
       "options": [
         [
           "europeanSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a European site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "ramsarSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a Ramsar site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "mczScientificEquipment",
-          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "/licence-required-no-exemption"
+          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "/licence-required-no-exemption",
+          "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         ],
         [
           "otherScientificEquipment",
@@ -3156,18 +3170,21 @@
       "options": [
         [
           "europeanSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a European site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "ramsarSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a Ramsar site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "mczScientificEquipment",
-          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "/licence-required-no-exemption"
+          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "/licence-required-no-exemption",
+          "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         ],
         [
           "otherScientificEquipment",
@@ -3199,7 +3216,7 @@
       "section": "removal",
       "name": "wasteLitterSeaweedMpa",
       "options": [
-        "/removal/waste/dead-animals/mpa-management",
+        "/removal/waste/litter-seaweed/mpa-management",
         "/licence-not-required-exemption-available-article-21"
       ]
     },
@@ -3219,18 +3236,21 @@
       "options": [
         [
           "europeanSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a European site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "ramsarSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a Ramsar site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "mczScientificEquipment",
-          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "/licence-required-no-exemption"
+          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "/licence-required-no-exemption",
+          "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         ],
         [
           "otherScientificEquipment",
@@ -3291,18 +3311,21 @@
       "options": [
         [
           "europeanSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a European site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "ramsarSiteScientificEquipment",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a Ramsar site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "mczScientificEquipment",
-          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "/licence-required-no-exemption"
+          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "/licence-required-no-exemption",
+          "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         ],
         [
           "otherScientificEquipment",
@@ -3864,7 +3887,7 @@
       ]
     },
     "/dredging/navigational-dredging/previous-purpose": {
-    "title": "Was the purpose of the previous dredge to enable the continued use of the area of sea by vessels??",
+    "title": "Was the purpose of the previous dredge to enable the continued use of the area of sea by vessels?",
       "section": "dredging",
       "name": "navigationalDredgingPreviousPurpose",
       "options": [
@@ -3941,18 +3964,21 @@
       "options": [
         [
           "europeanSiteNavigationalDredging",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a European site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a European site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "ramsarSiteNavigationalDredging",
-          "Likely (either alone or in combination with other plans and projects) to have a significant effect on a Ramsar site",
-          "/licence-required-no-exemption"
+          "Likely to have a significant effect on a Ramsar site?",
+          "/licence-required-no-exemption",
+          "either alone or in combination with other plans and projects"
         ],
         [
           "mczNavigationalDredging",
-          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone or any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant?",
-          "/licence-required-no-exemption"
+          "Capable of affecting (other than insignificantly), the protected features of a Marine Conservation Zone?",
+          "/licence-required-no-exemption",
+          "including any ecological or geomorphological process on which the conservation of any protected feature of an MCZ is (wholly or in Part) dependant"
         ],
         [
           "otherSNavigationalDredging",
@@ -4450,12 +4476,12 @@
         [
           "inUk",
           "United Kingdom (except Scotland)",
-          null
+          "/licence-required-no-exemption"
         ],
         [
           "inUkMLA",
           "UK marine licensing area",
-          null
+          "/licence-required-no-exemption"
         ],
         [
           "none",
