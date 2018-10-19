@@ -2040,10 +2040,10 @@
       ],
       "next": [
         {
-          "path": "/deposit/maintenance/cables-pipelines/explosives"
+          "path": "/licence-required-no-exemption"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/deposit/maintenance/cables-pipelines/explosives",
           "if": "maintenanceCablesPipelinesProtection == false"
         }
       ]

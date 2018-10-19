@@ -1244,8 +1244,8 @@
       "section": "deposit",
       "name": "maintenanceCablesPipelinesProtection",
       "options": [
-        "/deposit/maintenance/cables-pipelines/explosives",
-        "/licence-required-no-exemption"
+        "/licence-required-no-exemption",
+        "/deposit/maintenance/cables-pipelines/explosives"
       ]
     },
     "/deposit/maintenance/cables-pipelines/explosives": {
