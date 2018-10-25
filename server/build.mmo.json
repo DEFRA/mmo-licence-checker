@@ -41,6 +41,7 @@
           "type": "RadiosField",
           "name": "location",
           "title": "Where will your activity take place?",
+          "hint": "'Sea' means any area which is submerged at mean high water spring tide and includes the waters of every estuary, river or channel where the tide flows at mean high water spring tide. Even waters in areas which are closed permanently or intermittently by a lock or other artificial means against the regular action of the tide are included, where seawater flows into or out from the area, either continuously or from time to time.",
           "options": {
             "list": "_1"
           }
@@ -80,11 +81,25 @@
       "title": "Licence is not required"
     },
     {
+      "path": "/licence-not-required-cables",
+      "components": [
+        {
+          "type": "Html",
+          "content": "<div class=\"govuk-prose-scope\"><p>Based on the information provided a marine licence is not required for the activity.  Based on the information provided the activity requires a\r\nlicence for the element that falls to be located within 12NM. No exemption is available. Please note that a marine licence is required for the deposit of a cable protection associated with the laying of a cable<p></div>"
+        },
+        {
+          "type": "Para",
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+        }
+      ],
+      "title": "Licence is not required"
+    },
+    {
       "path": "/licence-not-required-exemption-available-policy",
       "components": [
         {
           "type": "Html",
-          "content": "<div class=\"govuk-prose-scope\"><p>You indicated your intent to place a marker which will be in place less than 24 hours.Based on the information provided your activity is one that meets the terms of a marine licence exemption and a marine licence is therefore not required. This exemption does not require any action from you before it is undertaken.<p></div>"
+          "content": "<div class=\"govuk-prose-scope\"><p>Based on the information provided your activity is one that meets the terms of a marine licence exemption and a marine licence is therefore not required. This exemption does not require any action from you before it is undertaken.<p></div>"
         },
         {
           "type": "Para",
@@ -640,11 +655,39 @@
       "title": "Licence not required"
     },
     {
-      "path": "/licence-required-no-exemption",
+      "path": "/licence-required-no-exemption-no-self-service",
       "components": [
         {
           "type": "Html",
           "content": "<div class=\"govuk-prose-scope\"><p>Based on the information provided the activity requires a\r\nlicence. No exemption is available and the activity is not suitable for self-service licensing.\r\n<br>\r\n<br>\r\n<a href=\"#\">Apply for a marine licence</a><p></div>"
+        },
+        {
+          "type": "Para",
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+        }
+      ],
+      "title": "Licence is required"
+    },
+    {
+      "path": "/licence-required-no-exemption",
+      "components": [
+        {
+          "type": "Html",
+          "content": "<div class=\"govuk-prose-scope\"><p>Based on the information provided the activity requires a\r\nlicence. No exemption is available.\r\n<br>\r\n<br>\r\n<a href=\"#\">Apply for a marine licence</a><p></div>"
+        },
+        {
+          "type": "Para",
+          "content": "<a class=\"pull-right\" href=\"/feedback\">Provide feedback</a><a href=\"/pdf\">Download PDF</a><br><a href=\"/clear-session\">Start again</a>"
+        }
+      ],
+      "title": "Licence is required"
+    },
+    {
+      "path": "/licence-required-no-exemption-part-cables",
+      "components": [
+        {
+          "type": "Html",
+          "content": "<div class=\"govuk-prose-scope\"><p>You indicated that you activity involved the laying of a cable, part of which would fall to be located within 12NM and part outside of 12NM of the UK. Based on the information provided the activity requires a\r\nlicence for the element that falls to be located within 12NM. No exemption is available. Further it should be noted that a marine licence is required for the deposit of a cable protection proposed beyond 12 NM \r\n<br>\r\n<br>\r\n<a href=\"#\">Apply for a marine licence</a><p></div>"
         },
         {
           "type": "Para",
@@ -778,6 +821,10 @@
         {
           "path": "/construction/maintenance/harbour-works",
           "if": "maintenanceActivityType == 'harbourWorks'"
+        },
+        {
+          "path": "/construction/maintenance/cables",
+          "if": "maintenanceActivityType == 'cables'"
         },
         {
           "path": "/construction/maintenance/coastal-drainage-flood",
@@ -1067,6 +1114,63 @@
       ]
     },
     {
+      "path": "/construction/maintenance/cables",
+      "section": "construction",
+      "components": [
+        {
+          "type": "RadiosField",
+          "name": "cablesPurpose",
+          "title": "What is the purpose of the cable being maintained?",
+          "options": {
+            "list": "_10",
+            "bold": true
+          }
+        }
+      ],
+      "next": [
+        {
+          "path": "/construction/maintenance/cables/location",
+          "if": "cablesPurpose == 'transferOfData'"
+        },
+        {
+          "path": "/construction/maintenance/cables/location",
+          "if": "cablesPurpose == 'transfer of electricity'"
+        },
+        {
+          "path": "/licence-required-no-exemption",
+          "if": "cablesPurpose == 'other'"
+        }
+      ]
+    },
+    {
+      "path": "/construction/maintenance/cables/location",
+      "section": "construction",
+      "components": [
+        {
+          "type": "RadiosField",
+          "name": "cablesPurpose",
+          "title": "Where will the cable be laid?",
+          "options": {
+            "list": "_11"
+          }
+        }
+      ],
+      "next": [
+        {
+          "path": "/licence-required-no-exemption",
+          "if": "cablesPurpose == 'inside12NM'"
+        },
+        {
+          "path": "/licence-not-required-cables",
+          "if": "cablesPurpose == 'outside12NM'"
+        },
+        {
+          "path": "/licence-required-no-exemption-part-cables",
+          "if": "cablesPurpose == 'bothInsideOutside12NM'"
+        }
+      ]
+    },
+    {
       "path": "/construction/maintenance/coastal-drainage-flood",
       "section": "construction",
       "components": [
@@ -1075,7 +1179,7 @@
           "name": "maintenanceCoastalDrainageFloodUndertaker",
           "title": "Who will carry on the activity",
           "options": {
-            "list": "_10"
+            "list": "_12"
           }
         }
       ],
@@ -1243,7 +1347,7 @@
           "name": "newActivityType",
           "title": "What does your activity relate to?",
           "options": {
-            "list": "_11"
+            "list": "_13"
           }
         }
       ],
@@ -1261,6 +1365,10 @@
           "if": "newActivityType == 'floodEmergency'"
         },
         {
+          "path": "/construction/new/cables",
+          "if": "newActivityType == 'cables'"
+        },
+        {
           "path": "/construction/new/miscellaneous",
           "if": "newActivityType == 'miscellaneous'"
         }
@@ -1275,7 +1383,7 @@
           "name": "newMooringPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_12"
+            "list": "_14"
           }
         }
       ],
@@ -1311,7 +1419,7 @@
           "name": "newMooringUndertaker",
           "title": "Who will carry out the activity?",
           "options": {
-            "list": "_13"
+            "list": "_15"
           }
         }
       ],
@@ -1399,7 +1507,7 @@
           "name": "newPontoonUndertaker",
           "title": "Who will carry out the activity?",
           "options": {
-            "list": "_14"
+            "list": "_16"
           }
         }
       ],
@@ -1536,6 +1644,63 @@
       ]
     },
     {
+      "path": "/construction/new/cables",
+      "section": "construction",
+      "components": [
+        {
+          "type": "RadiosField",
+          "name": "cablesPurpose",
+          "title": "What is the purpose of the cable being maintained?",
+          "options": {
+            "list": "_17",
+            "bold": true
+          }
+        }
+      ],
+      "next": [
+        {
+          "path": "/construction/new/cables/location",
+          "if": "cablesPurpose == 'transferOfData'"
+        },
+        {
+          "path": "/construction/new/cables/location",
+          "if": "cablesPurpose == 'transfer of electricity'"
+        },
+        {
+          "path": "/licence-required-no-exemption",
+          "if": "cablesPurpose == 'other'"
+        }
+      ]
+    },
+    {
+      "path": "/construction/new/cables/location",
+      "section": "construction",
+      "components": [
+        {
+          "type": "RadiosField",
+          "name": "cablesPurpose",
+          "title": "Where will the cable be laid?",
+          "options": {
+            "list": "_18"
+          }
+        }
+      ],
+      "next": [
+        {
+          "path": "/licence-required-no-exemption",
+          "if": "cablesPurpose == 'inside12NM'"
+        },
+        {
+          "path": "/licence-not-required-cables",
+          "if": "cablesPurpose == 'outside12NM'"
+        },
+        {
+          "path": "/licence-required-no-exemption-part-cables",
+          "if": "cablesPurpose == 'bothInsideOutside12NM'"
+        }
+      ]
+    },
+    {
       "path": "/construction/new/miscellaneous",
       "section": "construction",
       "components": [
@@ -1544,7 +1709,7 @@
           "name": "miscellaneousActivityType",
           "title": "Whats is the purpose of your activity?",
           "options": {
-            "list": "_15"
+            "list": "_19"
           }
         }
       ],
@@ -1576,7 +1741,7 @@
           "name": "newMiscellaneousDeepseaMiningPurpose",
           "title": "Is the activity carried out?",
           "options": {
-            "list": "_16"
+            "list": "_20"
           }
         }
       ],
@@ -1664,7 +1829,7 @@
           "name": "method",
           "title": "How will the substance or object be deposited?",
           "options": {
-            "list": "_17"
+            "list": "_21"
           }
         }
       ],
@@ -1704,7 +1869,7 @@
           "name": "activityType",
           "title": "What is the purpose of your activity?",
           "options": {
-            "list": "_18",
+            "list": "_22",
             "bold": true
           }
         }
@@ -1753,7 +1918,7 @@
           "name": "maintenanceActivityType",
           "title": "What does the activity relate to?",
           "options": {
-            "list": "_19"
+            "list": "_23"
           }
         }
       ],
@@ -1789,7 +1954,7 @@
           "name": "maintenanceCoastalProtectionUndertaker",
           "title": "Who will carry on the activity",
           "options": {
-            "list": "_20"
+            "list": "_24"
           }
         }
       ],
@@ -2077,7 +2242,7 @@
           "name": "fishingActivityType",
           "title": "What does the activity relate to?",
           "options": {
-            "list": "_21"
+            "list": "_25"
           }
         }
       ],
@@ -2145,7 +2310,7 @@
           "name": "fishingShellfishPropogationCultivationDisposalArtificialReef",
           "title": "Is the deposit for the purpose of",
           "options": {
-            "list": "_22"
+            "list": "_26"
           }
         }
       ],
@@ -2173,7 +2338,7 @@
           "name": "fishingOperationsPurpose",
           "title": "What will be deposited",
           "options": {
-            "list": "_23"
+            "list": "_27"
           }
         }
       ],
@@ -2221,7 +2386,7 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationActivityType",
           "title": "What does your activity relate to?",
           "options": {
-            "list": "_24"
+            "list": "_28"
           }
         }
       ],
@@ -2421,7 +2586,7 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_25"
+            "list": "_29"
           }
         }
       ],
@@ -2473,7 +2638,7 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_26"
+            "list": "_30"
           }
         }
       ],
@@ -2525,7 +2690,7 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationSafetyDirectionsPurpose",
           "title": "What is the purpose of the deposit",
           "options": {
-            "list": "_27"
+            "list": "_31"
           }
         }
       ],
@@ -2557,7 +2722,7 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationPollutionPreventionTreatmeantActivityType",
           "title": "What does your activity relate to?",
           "options": {
-            "list": "_28"
+            "list": "_32"
           }
         }
       ],
@@ -2629,7 +2794,7 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationChemicalOilTreatmentPurpose",
           "title": "What is the purpose of the deposit",
           "options": {
-            "list": "_29"
+            "list": "_33"
           }
         }
       ],
@@ -2801,7 +2966,7 @@
           "name": "markerMooringPontoonAidToNavigationActivityType",
           "title": "Markers, moorings and aids to navigation activity",
           "options": {
-            "list": "_30"
+            "list": "_34"
           }
         }
       ],
@@ -2837,7 +3002,7 @@
           "name": "markerMooringPontoonAidToNavigationTemporaryMarkerPurpose",
           "title": "What is the purpose of your activity?",
           "options": {
-            "list": "_31"
+            "list": "_35"
           }
         }
       ],
@@ -2925,7 +3090,7 @@
           "name": "markerMooringPontoonAidToNavigationTemporaryMarkerLse",
           "title": "Is the activity",
           "options": {
-            "list": "_32",
+            "list": "_36",
             "bold": true
           }
         }
@@ -2958,7 +3123,7 @@
           "name": "markerMooringPontoonAidToNavigationMarineSiteMarkerUndertaker",
           "title": "Who will carry out the activity?",
           "options": {
-            "list": "_33"
+            "list": "_37"
           }
         }
       ],
@@ -2986,7 +3151,7 @@
           "name": "markerMooringPontoonAidToNavigationMarineSiteMarkerNePurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_34"
+            "list": "_38"
           }
         }
       ],
@@ -3010,7 +3175,7 @@
           "name": "markerMooringPontoonAidToNavigationMarineSiteMarkerPaPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_35"
+            "list": "_39"
           }
         }
       ],
@@ -3034,7 +3199,7 @@
           "name": "markerMooringPontoonAidToNavigationMoorings",
           "title": "What will be deposited?",
           "options": {
-            "list": "_36"
+            "list": "_40"
           }
         }
       ],
@@ -3070,7 +3235,7 @@
           "name": "markerMooringPontoonAidToNavigationMooringsUndertaker",
           "title": "Who will carry out the activity?",
           "options": {
-            "list": "_37"
+            "list": "_41"
           }
         }
       ],
@@ -3158,7 +3323,7 @@
           "name": "markerMooringPontoonAidToNavigationPontoonUndertaker",
           "title": "Who will carry out the activity?",
           "options": {
-            "list": "_38"
+            "list": "_42"
           }
         }
       ],
@@ -3301,9 +3466,9 @@
         {
           "type": "RadiosField",
           "name": "scientificResearchActivityType",
-          "title": "Scientific research",
+          "title": "What does the activity relate to?",
           "options": {
-            "list": "_39"
+            "list": "_43"
           }
         }
       ],
@@ -3431,7 +3596,7 @@
           "name": "scientificResearchScientificEquipmentLse",
           "title": "Is the activity",
           "options": {
-            "list": "_40",
+            "list": "_44",
             "bold": true
           }
         }
@@ -3564,7 +3729,7 @@
           "name": "scientificResearchTracersReagentsLse",
           "title": "Is the activity",
           "options": {
-            "list": "_41",
+            "list": "_45",
             "bold": true
           }
         }
@@ -3597,7 +3762,7 @@
           "name": "vesselsActivityType",
           "title": "What is the purpose of your activity?",
           "options": {
-            "list": "_42"
+            "list": "_46"
           }
         }
       ],
@@ -3757,7 +3922,7 @@
           "name": "vesselsAggregateDredgingObjectType",
           "title": "What will be deposited?",
           "options": {
-            "list": "_43"
+            "list": "_47"
           }
         }
       ],
@@ -3885,7 +4050,7 @@
           "name": "vesselsForeignVesselsUndertaker",
           "title": "Will the activity be carried out by or in relation to",
           "options": {
-            "list": "_44"
+            "list": "_48"
           }
         }
       ],
@@ -3913,7 +4078,7 @@
           "name": "miscellaneousActivityType",
           "title": "Whats is the purpose of your activity?",
           "options": {
-            "list": "_45"
+            "list": "_49"
           }
         }
       ],
@@ -3945,7 +4110,7 @@
           "name": "miscellaneousDefenceActivitiesUndertaker",
           "title": "Who will carryout the activity?",
           "options": {
-            "list": "_46"
+            "list": "_50"
           }
         }
       ],
@@ -3993,7 +4158,7 @@
           "name": "miscellaneousDefenceActivitiesPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_47"
+            "list": "_51"
           }
         }
       ],
@@ -4017,7 +4182,7 @@
           "name": "miscellaneousDeepseaMiningPurpose",
           "title": "Is the activity carried out?",
           "options": {
-            "list": "_48"
+            "list": "_52"
           }
         }
       ],
@@ -4086,7 +4251,8 @@
           "name": "method",
           "title": "How will the removal be made?",
           "options": {
-            "list": "_49"
+            "list": "_53",
+            "bold": true
           }
         }
       ],
@@ -4104,7 +4270,7 @@
           "if": "method == 'marineStructure'"
         },
         {
-          "path": "/removal/activity-type",
+          "path": "/removal/lifting-bag",
           "if": "method == 'floatingContainer'"
         },
         {
@@ -4118,6 +4284,54 @@
       ]
     },
     {
+      "path": "/removal/lifting-bag",
+      "section": "removal",
+      "components": [
+        {
+          "type": "YesNoField",
+          "name": "liftingBagCapacity",
+          "title": "Will the object(s) to be removed require a total lifting capacity greater than 100KG?"
+        }
+      ],
+      "next": [
+        {
+          "path": "/removal/activity-type"
+        },
+        {
+          "path": "/removal/lifting-bag/object-age",
+          "if": "liftingBagCapacity == false"
+        }
+      ]
+    },
+    {
+      "path": "/removal/lifting-bag/object-age",
+      "section": "removal",
+      "components": [
+        {
+          "type": "RadiosField",
+          "name": "liftingBagObjectAge",
+          "title": "How long has the object to be removed been on the seabed?",
+          "options": {
+            "list": "_54"
+          }
+        }
+      ],
+      "next": [
+        {
+          "path": "/licence-not-required-exemption-available-policy",
+          "if": "liftingBagObjectAge == 'lessThan12Months'"
+        },
+        {
+          "path": "/removal/activity-type",
+          "if": "liftingBagObjectAge == 'longerThan12Months'"
+        },
+        {
+          "path": "/removal/activity-type",
+          "if": "liftingBagObjectAge == 'dont know'"
+        }
+      ]
+    },
+    {
       "path": "/removal/activity-type",
       "section": "removal",
       "components": [
@@ -4126,7 +4340,7 @@
           "name": "activityType",
           "title": "What is the purpose of your activity?",
           "options": {
-            "list": "_50",
+            "list": "_55",
             "bold": true
           }
         }
@@ -4175,7 +4389,7 @@
           "name": "markerMooringAidToNavigationActivityType",
           "title": "Markers, moorings and aids to navigation activity",
           "options": {
-            "list": "_51"
+            "list": "_56"
           }
         }
       ],
@@ -4211,7 +4425,7 @@
           "name": "markerMooringPontoonAidToNavigationTemporaryMarkerPurpose",
           "title": "What is the purpose of your activity?",
           "options": {
-            "list": "_52"
+            "list": "_57"
           }
         }
       ],
@@ -4239,7 +4453,7 @@
           "name": "markerMooringPontoonAidToNavigationMarineSiteMarkerUndertaker",
           "title": "Who will carry out the activity?",
           "options": {
-            "list": "_53"
+            "list": "_58"
           }
         }
       ],
@@ -4267,7 +4481,7 @@
           "name": "markerMooringPontoonAidToNavigationMarineSiteMarkerNePurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_54"
+            "list": "_59"
           }
         }
       ],
@@ -4291,7 +4505,7 @@
           "name": "markerMooringPontoonAidToNavigationMarineSiteMarkerPaPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_55"
+            "list": "_60"
           }
         }
       ],
@@ -4315,7 +4529,7 @@
           "name": "markerMooringPontoonAidToNavigationMoorings",
           "title": "What will be removed?",
           "options": {
-            "list": "_56"
+            "list": "_61"
           }
         }
       ],
@@ -4351,7 +4565,7 @@
           "name": "markerMooringPontoonAidToNavigationMooringsUndertaker",
           "title": "Who will carry out the activity?",
           "options": {
-            "list": "_57"
+            "list": "_62"
           }
         }
       ],
@@ -4439,7 +4653,7 @@
           "name": "markerMooringPontoonAidToNavigationPontoonUndertaker",
           "title": "Who will carry out the activity?",
           "options": {
-            "list": "_58"
+            "list": "_63"
           }
         }
       ],
@@ -4561,9 +4775,9 @@
         {
           "type": "RadiosField",
           "name": "scientificResearchActivityType",
-          "title": "Scientific research",
+          "title": "What does the activity relate to?",
           "options": {
-            "list": "_59"
+            "list": "_64"
           }
         }
       ],
@@ -4671,7 +4885,7 @@
           "name": "scientificResearchScientificEquipmentLse",
           "title": "Is the activity",
           "options": {
-            "list": "_60",
+            "list": "_65",
             "bold": true
           }
         }
@@ -4804,7 +5018,7 @@
           "name": "scientificResearchSamplesLse",
           "title": "Is the activity",
           "options": {
-            "list": "_61",
+            "list": "_66",
             "bold": true
           }
         }
@@ -4835,9 +5049,9 @@
         {
           "type": "RadiosField",
           "name": "maintenanceActivityType",
-          "title": "Maintenance activity",
+          "title": "What does the activity relate to?",
           "options": {
-            "list": "_62"
+            "list": "_67"
           }
         }
       ],
@@ -4869,7 +5083,7 @@
           "name": "maintenanceCoastalProtectionUndertaker",
           "title": "Who will carry on the activity",
           "options": {
-            "list": "_63"
+            "list": "_68"
           }
         }
       ],
@@ -5037,7 +5251,7 @@
           "name": "wasteActivityType",
           "title": "What does the activity relate to?",
           "options": {
-            "list": "_64"
+            "list": "_69"
           }
         }
       ],
@@ -5153,7 +5367,7 @@
           "name": "wasteDeadAnimalLse",
           "title": "Is the activity",
           "options": {
-            "list": "_65",
+            "list": "_70",
             "bold": true
           }
         }
@@ -5266,7 +5480,7 @@
           "name": "wasteLitterSeaweedLse",
           "title": "Is the activity",
           "options": {
-            "list": "_66",
+            "list": "_71",
             "bold": true
           }
         }
@@ -5399,7 +5613,7 @@
           "name": "wasteAccidentalDepositsLse",
           "title": "Is the activity",
           "options": {
-            "list": "_67",
+            "list": "_72",
             "bold": true
           }
         }
@@ -5432,7 +5646,7 @@
           "name": "wasteObstructionDangerNavigation",
           "title": "Who will carry on the activity",
           "options": {
-            "list": "_68"
+            "list": "_73"
           }
         }
       ],
@@ -5488,7 +5702,7 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationActivityType",
           "title": "What does the activity relate to?",
           "options": {
-            "list": "_69"
+            "list": "_74"
           }
         }
       ],
@@ -5640,7 +5854,7 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_70"
+            "list": "_75"
           }
         }
       ],
@@ -5692,7 +5906,7 @@
           "name": "emergencySafetyPollutionResponseAccidentInvestigationSafetyDirectionsPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_71"
+            "list": "_76"
           }
         }
       ],
@@ -5782,9 +5996,9 @@
         {
           "type": "RadiosField",
           "name": "fishingActivityType",
-          "title": "Fishing activity",
+          "title": "What does the activity relate to?",
           "options": {
-            "list": "_72"
+            "list": "_77"
           }
         }
       ],
@@ -5852,7 +6066,7 @@
           "name": "fishingOperationsPurpose",
           "title": "What is the purpose of the activity",
           "options": {
-            "list": "_73"
+            "list": "_78"
           }
         }
       ],
@@ -5880,7 +6094,7 @@
           "name": "miscellaneousActivityType",
           "title": "Whats is the purpose of your activity?",
           "options": {
-            "list": "_74"
+            "list": "_79"
           }
         }
       ],
@@ -5920,7 +6134,7 @@
           "name": "miscellaneousDefenceActivitiesUndertaker",
           "title": "Who will carryout the activity?",
           "options": {
-            "list": "_75"
+            "list": "_80"
           }
         }
       ],
@@ -5968,7 +6182,7 @@
           "name": "miscellaneousDefenceActivitiesPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_76"
+            "list": "_81"
           }
         }
       ],
@@ -5992,7 +6206,7 @@
           "name": "miscellaneousDeepseaMiningPurpose",
           "title": "Is the activity carried out?",
           "options": {
-            "list": "_77"
+            "list": "_82"
           }
         }
       ],
@@ -6080,7 +6294,7 @@
           "name": "miscellaneousForeignVesselsUndertaker",
           "title": "Will the activity be carried out by or in relation to",
           "options": {
-            "list": "_78"
+            "list": "_83"
           }
         }
       ],
@@ -6108,7 +6322,7 @@
           "name": "activityType",
           "title": "What is the purpose of your activity?",
           "options": {
-            "list": "_79"
+            "list": "_84"
           }
         }
       ],
@@ -6168,7 +6382,7 @@
           "name": "authorisationType",
           "title": "Is the activity is authorised by",
           "options": {
-            "list": "_80"
+            "list": "_85"
           }
         }
       ],
@@ -6284,7 +6498,7 @@
           "name": "authorisationType",
           "title": "How many cubic meters will be dredged?",
           "options": {
-            "list": "_81"
+            "list": "_86"
           }
         }
       ],
@@ -6408,7 +6622,7 @@
           "name": "navigationalDredgingLse",
           "title": "Is the activity",
           "options": {
-            "list": "_82",
+            "list": "_87",
             "bold": true
           }
         }
@@ -6461,7 +6675,7 @@
           "name": "coastalDrainageFloodActivityType",
           "title": "What does your activity relate to?",
           "options": {
-            "list": "_83"
+            "list": "_88"
           }
         }
       ],
@@ -6489,7 +6703,7 @@
           "name": "coastalDrainageFloodMaintenceUndertaker",
           "title": "Who will carry on the activity",
           "options": {
-            "list": "_84"
+            "list": "_89"
           }
         }
       ],
@@ -6637,7 +6851,7 @@
           "name": "emergencyActivityType",
           "title": "What does the activity relate to?",
           "options": {
-            "list": "_85",
+            "list": "_90",
             "bold": true
           }
         }
@@ -6814,7 +7028,7 @@
           "name": "emergencyCoastguardPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_86"
+            "list": "_91"
           }
         }
       ],
@@ -6866,7 +7080,7 @@
           "name": "safetyTrainingActivityType",
           "title": "What does the activity relate to?",
           "options": {
-            "list": "_87"
+            "list": "_92"
           }
         }
       ],
@@ -6918,7 +7132,7 @@
           "name": "safetyTrainingCoastguardPurpose",
           "title": "What is the purpose of the activity?",
           "options": {
-            "list": "_88"
+            "list": "_93"
           }
         }
       ],
@@ -6970,7 +7184,7 @@
           "name": "safetyTrainingSafetyDirectionsPurpose",
           "title": "What is the purpose of the activity",
           "options": {
-            "list": "_89"
+            "list": "_94"
           }
         }
       ],
@@ -7002,7 +7216,7 @@
           "name": "dredgingMiscellaneousActivityType",
           "title": "Whats is the purpose of your activity?",
           "options": {
-            "list": "_90"
+            "list": "_95"
           }
         }
       ],
@@ -7030,7 +7244,7 @@
           "name": "dredgingMiscellaneousDeepseaMiningPurpose",
           "title": "Is the activity carried out?",
           "options": {
-            "list": "_91"
+            "list": "_96"
           }
         }
       ],
@@ -7078,7 +7292,7 @@
           "name": "method",
           "title": "Where will the substance or object be incinerated?",
           "options": {
-            "list": "_92"
+            "list": "_97"
           }
         }
       ],
@@ -7113,7 +7327,7 @@
           "name": "activityTypeElsewhere",
           "title": "What type of activity will be undertaken?",
           "options": {
-            "list": "_93"
+            "list": "_98"
           }
         }
       ],
@@ -7145,25 +7359,25 @@
           "name": "method",
           "title": "How will the deposit be made?",
           "options": {
-            "list": "_94"
+            "list": "_99"
           }
         }
       ],
       "next": [
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'britishVessel'"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'britishMarineStructure'"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'britishAircraft'"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'floatingContainer'"
         },
         {
@@ -7181,17 +7395,17 @@
           "name": "loaded",
           "title": "Where was the substance or object to be deposited loaded?",
           "options": {
-            "list": "_95"
+            "list": "_100"
           }
         }
       ],
       "next": [
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "loaded == 'inUk'"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "loaded == 'inUkMLA'"
         },
         {
@@ -7209,21 +7423,21 @@
           "name": "method",
           "title": "Where will the incineration take place?",
           "options": {
-            "list": "_96"
+            "list": "_101"
           }
         }
       ],
       "next": [
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'britishVessel'"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'britishMarineStructure'"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'controlledFloatingContainer'"
         },
         {
@@ -7244,7 +7458,7 @@
       ],
       "next": [
         {
-          "path": "/licence-required-no-exemption"
+          "path": "/licence-required-no-exemption-no-self-service"
         },
         {
           "path": "/licence-not-required",
@@ -7261,21 +7475,21 @@
           "name": "method",
           "title": "How will the sinking be controlled?",
           "options": {
-            "list": "_97"
+            "list": "_102"
           }
         }
       ],
       "next": [
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'britishVessel'"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'britishAircraft'"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "method == 'britishMarineStructure'"
         },
         {
@@ -7293,17 +7507,17 @@
           "name": "towedOrPropelled",
           "title": "Where will the vessel or container be towed or propelled from, for the purpose its sinking",
           "options": {
-            "list": "_98"
+            "list": "_103"
           }
         }
       ],
       "next": [
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "towedOrPropelled == 'inUk'"
         },
         {
-          "path": "/licence-required-no-exemption",
+          "path": "/licence-required-no-exemption-no-self-service",
           "if": "towedOrPropelled == 'inUkMLA'"
         },
         {
@@ -7430,6 +7644,10 @@
           "value": "harbourWorks"
         },
         {
+          "text": "Cables",
+          "value": "cables"
+        },
+        {
           "text": "Coastal protection, drainage or flood defence",
           "value": "coastalProtectionDrainageOrFloodDefence"
         },
@@ -7521,6 +7739,46 @@
     },
     {
       "name": "_10",
+      "title": "List for page /construction/maintenance/cables",
+      "type": "string",
+      "items": [
+        {
+          "text": "The transfer of data",
+          "value": "transferOfData",
+          "description": "e.g. international telecommunications cables"
+        },
+        {
+          "text": "The transfer of electricity",
+          "value": "transfer of electricity",
+          "description": "e.g. interconnector cables between continents"
+        },
+        {
+          "text": "Other",
+          "value": "other"
+        }
+      ]
+    },
+    {
+      "name": "_11",
+      "title": "List for page /construction/maintenance/cables/location",
+      "type": "string",
+      "items": [
+        {
+          "text": "Wholly inside 12NM",
+          "value": "inside12NM"
+        },
+        {
+          "text": "Wholly outside 12NM",
+          "value": "outside12NM"
+        },
+        {
+          "text": "Part inside 12NW part outside 12NM",
+          "value": "bothInsideOutside12NM"
+        }
+      ]
+    },
+    {
+      "name": "_12",
       "title": "List for page /construction/maintenance/coastal-drainage-flood",
       "type": "string",
       "items": [
@@ -7539,7 +7797,7 @@
       ]
     },
     {
-      "name": "_11",
+      "name": "_13",
       "title": "List for page /construction/new",
       "type": "string",
       "items": [
@@ -7556,13 +7814,17 @@
           "value": "floodEmergency"
         },
         {
+          "text": "Cables",
+          "value": "cables"
+        },
+        {
           "text": "Miscellaneous",
           "value": "miscellaneous"
         }
       ]
     },
     {
-      "name": "_12",
+      "name": "_14",
       "title": "List for page /construction/new/moorings",
       "type": "string",
       "items": [
@@ -7589,7 +7851,7 @@
       ]
     },
     {
-      "name": "_13",
+      "name": "_15",
       "title": "List for page /construction/new/moorings/undertaker",
       "type": "string",
       "items": [
@@ -7608,7 +7870,7 @@
       ]
     },
     {
-      "name": "_14",
+      "name": "_16",
       "title": "List for page /construction/new/pontoons/undertaker",
       "type": "string",
       "items": [
@@ -7623,7 +7885,47 @@
       ]
     },
     {
-      "name": "_15",
+      "name": "_17",
+      "title": "List for page /construction/new/cables",
+      "type": "string",
+      "items": [
+        {
+          "text": "The transfer of data",
+          "value": "transferOfData",
+          "description": "e.g. international telecommunications cables"
+        },
+        {
+          "text": "The transfer of electricity",
+          "value": "transfer of electricity",
+          "description": "e.g. interconnector cables between continents"
+        },
+        {
+          "text": "Other",
+          "value": "other"
+        }
+      ]
+    },
+    {
+      "name": "_18",
+      "title": "List for page /construction/new/cables/location",
+      "type": "string",
+      "items": [
+        {
+          "text": "Wholly inside 12NM",
+          "value": "inside12NM"
+        },
+        {
+          "text": "Wholly outside 12NM",
+          "value": "outside12NM"
+        },
+        {
+          "text": "Part inside 12NW part outside 12NM",
+          "value": "bothInsideOutside12NM"
+        }
+      ]
+    },
+    {
+      "name": "_19",
       "title": "List for page /construction/new/miscellaneous",
       "type": "string",
       "items": [
@@ -7646,7 +7948,7 @@
       ]
     },
     {
-      "name": "_16",
+      "name": "_20",
       "title": "List for page /construction/new/miscellaneous/deepsea-mining",
       "type": "string",
       "items": [
@@ -7665,7 +7967,7 @@
       ]
     },
     {
-      "name": "_17",
+      "name": "_21",
       "title": "List for page /deposit/method",
       "type": "string",
       "items": [
@@ -7696,7 +7998,7 @@
       ]
     },
     {
-      "name": "_18",
+      "name": "_22",
       "title": "List for page /deposit/activity-type",
       "type": "string",
       "items": [
@@ -7722,7 +8024,7 @@
         {
           "text": "Emergency",
           "value": "emergency",
-          "description": "Including safety, pollution response and accident investigation"
+          "description": "Including emergency works, safety, pollution response and accident investigation"
         },
         {
           "text": "Fishing",
@@ -7741,7 +8043,7 @@
       ]
     },
     {
-      "name": "_19",
+      "name": "_23",
       "title": "List for page /deposit/maintenance",
       "type": "string",
       "items": [
@@ -7768,7 +8070,7 @@
       ]
     },
     {
-      "name": "_20",
+      "name": "_24",
       "title": "List for page /deposit/maintenance/coastal-drainage-flood",
       "type": "string",
       "items": [
@@ -7787,7 +8089,7 @@
       ]
     },
     {
-      "name": "_21",
+      "name": "_25",
       "title": "List for page /deposit/fishing",
       "type": "string",
       "items": [
@@ -7806,7 +8108,7 @@
       ]
     },
     {
-      "name": "_22",
+      "name": "_26",
       "title": "List for page /deposit/fishing/shellfish-propagation-cultivation/disposal-artificial-reef",
       "type": "string",
       "items": [
@@ -7825,7 +8127,7 @@
       ]
     },
     {
-      "name": "_23",
+      "name": "_27",
       "title": "List for page /deposit/fishing/fishing-operations",
       "type": "string",
       "items": [
@@ -7844,7 +8146,7 @@
       ]
     },
     {
-      "name": "_24",
+      "name": "_28",
       "title": "List for page /deposit/emergency-safety-pollution-response-accident-investigation",
       "type": "string",
       "items": [
@@ -7895,7 +8197,7 @@
       ]
     },
     {
-      "name": "_25",
+      "name": "_29",
       "title": "List for page /deposit/emergency-safety-pollution-response-accident-investigation/coastguard/purpose",
       "type": "string",
       "items": [
@@ -7918,7 +8220,7 @@
       ]
     },
     {
-      "name": "_26",
+      "name": "_30",
       "title": "List for page /deposit/emergency-safety-pollution-response-accident-investigation/flares/purpose",
       "type": "string",
       "items": [
@@ -7941,7 +8243,7 @@
       ]
     },
     {
-      "name": "_27",
+      "name": "_31",
       "title": "List for page /deposit/emergency-safety-pollution-response-accident-investigation/safety-directions",
       "type": "string",
       "items": [
@@ -7964,7 +8266,7 @@
       ]
     },
     {
-      "name": "_28",
+      "name": "_32",
       "title": "List for page /deposit/emergency-safety-pollution-response-accident-investigation/pollution-prevention-treatment",
       "type": "string",
       "items": [
@@ -7987,7 +8289,7 @@
       ]
     },
     {
-      "name": "_29",
+      "name": "_33",
       "title": "List for page /deposit/emergency-safety-pollution-response-accident-investigation/chemical-oil-treatment",
       "type": "string",
       "items": [
@@ -8010,7 +8312,7 @@
       ]
     },
     {
-      "name": "_30",
+      "name": "_34",
       "title": "List for page /deposit/markers-moorings-pontoons-aids-to-navigation",
       "type": "string",
       "items": [
@@ -8037,7 +8339,7 @@
       ]
     },
     {
-      "name": "_31",
+      "name": "_35",
       "title": "List for page /deposit/markers-moorings-pontoons-aids-to-navigation/temporary-markers",
       "type": "string",
       "items": [
@@ -8056,7 +8358,7 @@
       ]
     },
     {
-      "name": "_32",
+      "name": "_36",
       "title": "List for page /deposit/markers-moorings-pontoons-aids-to-navigation/temporary-markers/lse",
       "type": "string",
       "items": [
@@ -8082,7 +8384,7 @@
       ]
     },
     {
-      "name": "_33",
+      "name": "_37",
       "title": "List for page /deposit/markers-moorings-pontoons-aids-to-navigation/marine-site-markers",
       "type": "string",
       "items": [
@@ -8101,7 +8403,7 @@
       ]
     },
     {
-      "name": "_34",
+      "name": "_38",
       "title": "List for page /deposit/markers-moorings-pontoons-aids-to-navigation/marine-site-markers/ne-purpose",
       "type": "string",
       "items": [
@@ -8116,7 +8418,7 @@
       ]
     },
     {
-      "name": "_35",
+      "name": "_39",
       "title": "List for page /deposit/markers-moorings-pontoons-aids-to-navigation/marine-site-markers/pa-purpose",
       "type": "string",
       "items": [
@@ -8131,7 +8433,7 @@
       ]
     },
     {
-      "name": "_36",
+      "name": "_40",
       "title": "List for page /deposit/markers-moorings-pontoons-aids-to-navigation/moorings",
       "type": "string",
       "items": [
@@ -8158,7 +8460,7 @@
       ]
     },
     {
-      "name": "_37",
+      "name": "_41",
       "title": "List for page /deposit/markers-moorings-pontoons-aids-to-navigation/moorings/undertaker",
       "type": "string",
       "items": [
@@ -8177,7 +8479,7 @@
       ]
     },
     {
-      "name": "_38",
+      "name": "_42",
       "title": "List for page /deposit/markers-moorings-pontoons-aids-to-navigation/pontoons/undertaker",
       "type": "string",
       "items": [
@@ -8192,7 +8494,7 @@
       ]
     },
     {
-      "name": "_39",
+      "name": "_43",
       "title": "List for page /deposit/scientific-research",
       "type": "string",
       "items": [
@@ -8211,7 +8513,7 @@
       ]
     },
     {
-      "name": "_40",
+      "name": "_44",
       "title": "List for page /deposit/scientific-research/scientific-equipment/lse",
       "type": "string",
       "items": [
@@ -8237,7 +8539,7 @@
       ]
     },
     {
-      "name": "_41",
+      "name": "_45",
       "title": "List for page /deposit/scientific-research/tracers-reagents/lse",
       "type": "string",
       "items": [
@@ -8263,7 +8565,7 @@
       ]
     },
     {
-      "name": "_42",
+      "name": "_46",
       "title": "List for page /deposit/vessels",
       "type": "string",
       "items": [
@@ -8294,7 +8596,7 @@
       ]
     },
     {
-      "name": "_43",
+      "name": "_47",
       "title": "List for page /deposit/vessels/aggregate-dredging/object-type",
       "type": "string",
       "items": [
@@ -8313,7 +8615,7 @@
       ]
     },
     {
-      "name": "_44",
+      "name": "_48",
       "title": "List for page /deposit/vessels/foreign-vessels/undertaker",
       "type": "string",
       "items": [
@@ -8332,7 +8634,7 @@
       ]
     },
     {
-      "name": "_45",
+      "name": "_49",
       "title": "List for page /deposit/miscellaneous",
       "type": "string",
       "items": [
@@ -8355,7 +8657,7 @@
       ]
     },
     {
-      "name": "_46",
+      "name": "_50",
       "title": "List for page /deposit/miscellaneous/defence-activities",
       "type": "string",
       "items": [
@@ -8374,7 +8676,7 @@
       ]
     },
     {
-      "name": "_47",
+      "name": "_51",
       "title": "List for page /deposit/miscellaneous/defence-activities/purpose",
       "type": "string",
       "items": [
@@ -8389,7 +8691,7 @@
       ]
     },
     {
-      "name": "_48",
+      "name": "_52",
       "title": "List for page /deposit/miscellaneous/deepsea-mining",
       "type": "string",
       "items": [
@@ -8408,7 +8710,7 @@
       ]
     },
     {
-      "name": "_49",
+      "name": "_53",
       "title": "List for page /removal/method",
       "type": "string",
       "items": [
@@ -8426,7 +8728,8 @@
         },
         {
           "text": "A floating container in the sea",
-          "value": "floatingContainer"
+          "value": "floatingContainer",
+          "description": "Includes using lifting bags"
         },
         {
           "text": "A structure on land constructed or adapted wholly or mainly for the purposes of depositing solids in the sea",
@@ -8439,7 +8742,26 @@
       ]
     },
     {
-      "name": "_50",
+      "name": "_54",
+      "title": "List for page /removal/lifting-bag/object-age",
+      "type": "string",
+      "items": [
+        {
+          "text": "Less than 12 months",
+          "value": "lessThan12Months"
+        },
+        {
+          "text": "Longer than 12 months",
+          "value": "longerThan12Months"
+        },
+        {
+          "text": "Not sure",
+          "value": "dont know"
+        }
+      ]
+    },
+    {
+      "name": "_55",
       "title": "List for page /removal/activity-type",
       "type": "string",
       "items": [
@@ -8469,7 +8791,7 @@
         {
           "text": "Emergency",
           "value": "emergency",
-          "description": "Including safety, pollution response and accident investigation"
+          "description": "Including emergency works, safety, pollution response and accident investigation"
         },
         {
           "text": "Fishing",
@@ -8483,7 +8805,7 @@
       ]
     },
     {
-      "name": "_51",
+      "name": "_56",
       "title": "List for page /removal/markers-moorings-pontoons-aids-to-navigation",
       "type": "string",
       "items": [
@@ -8510,7 +8832,7 @@
       ]
     },
     {
-      "name": "_52",
+      "name": "_57",
       "title": "List for page /removal/markers-moorings-pontoons-aids-to-navigation/temporary-markers",
       "type": "string",
       "items": [
@@ -8529,7 +8851,7 @@
       ]
     },
     {
-      "name": "_53",
+      "name": "_58",
       "title": "List for page /removal/markers-moorings-pontoons-aids-to-navigation/marine-site-markers",
       "type": "string",
       "items": [
@@ -8548,7 +8870,7 @@
       ]
     },
     {
-      "name": "_54",
+      "name": "_59",
       "title": "List for page /removal/markers-moorings-pontoons-aids-to-navigation/marine-site-markers/ne-purpose",
       "type": "string",
       "items": [
@@ -8563,7 +8885,7 @@
       ]
     },
     {
-      "name": "_55",
+      "name": "_60",
       "title": "List for page /removal/markers-moorings-pontoons-aids-to-navigation/marine-site-markers/pa-purpose",
       "type": "string",
       "items": [
@@ -8578,7 +8900,7 @@
       ]
     },
     {
-      "name": "_56",
+      "name": "_61",
       "title": "List for page /removal/markers-moorings-pontoons-aids-to-navigation/moorings",
       "type": "string",
       "items": [
@@ -8605,7 +8927,7 @@
       ]
     },
     {
-      "name": "_57",
+      "name": "_62",
       "title": "List for page /removal/markers-moorings-pontoons-aids-to-navigation/moorings/undertaker",
       "type": "string",
       "items": [
@@ -8624,7 +8946,7 @@
       ]
     },
     {
-      "name": "_58",
+      "name": "_63",
       "title": "List for page /removal/markers-moorings-pontoons-aids-to-navigation/pontoons/undertaker",
       "type": "string",
       "items": [
@@ -8639,7 +8961,7 @@
       ]
     },
     {
-      "name": "_59",
+      "name": "_64",
       "title": "List for page /removal/scientific-research",
       "type": "string",
       "items": [
@@ -8658,7 +8980,7 @@
       ]
     },
     {
-      "name": "_60",
+      "name": "_65",
       "title": "List for page /removal/scientific-research/scientific-equipment/lse",
       "type": "string",
       "items": [
@@ -8684,7 +9006,7 @@
       ]
     },
     {
-      "name": "_61",
+      "name": "_66",
       "title": "List for page /removal/scientific-research/samples/lse",
       "type": "string",
       "items": [
@@ -8710,7 +9032,7 @@
       ]
     },
     {
-      "name": "_62",
+      "name": "_67",
       "title": "List for page /removal/maintenance",
       "type": "string",
       "items": [
@@ -8733,7 +9055,7 @@
       ]
     },
     {
-      "name": "_63",
+      "name": "_68",
       "title": "List for page /removal/maintenance/coastal-drainage-flood",
       "type": "string",
       "items": [
@@ -8752,7 +9074,7 @@
       ]
     },
     {
-      "name": "_64",
+      "name": "_69",
       "title": "List for page /removal/waste",
       "type": "string",
       "items": [
@@ -8779,7 +9101,7 @@
       ]
     },
     {
-      "name": "_65",
+      "name": "_70",
       "title": "List for page /removal/waste/dead-animals/undertaker/lse",
       "type": "string",
       "items": [
@@ -8805,7 +9127,7 @@
       ]
     },
     {
-      "name": "_66",
+      "name": "_71",
       "title": "List for page /removal/waste/litter-seaweed/lse",
       "type": "string",
       "items": [
@@ -8831,7 +9153,7 @@
       ]
     },
     {
-      "name": "_67",
+      "name": "_72",
       "title": "List for page /removal/waste/accidental-deposits/lse",
       "type": "string",
       "items": [
@@ -8857,7 +9179,7 @@
       ]
     },
     {
-      "name": "_68",
+      "name": "_73",
       "title": "List for page /removal/waste/obstruction-danger-navigation",
       "type": "string",
       "items": [
@@ -8884,7 +9206,7 @@
       ]
     },
     {
-      "name": "_69",
+      "name": "_74",
       "title": "List for page /removal/emergency-safety-pollution-response-accident-investigation",
       "type": "string",
       "items": [
@@ -8927,7 +9249,7 @@
       ]
     },
     {
-      "name": "_70",
+      "name": "_75",
       "title": "List for page /removal/emergency-safety-pollution-response-accident-investigation/coastguard/purpose",
       "type": "string",
       "items": [
@@ -8950,7 +9272,7 @@
       ]
     },
     {
-      "name": "_71",
+      "name": "_76",
       "title": "List for page /removal/emergency-safety-pollution-response-accident-investigation/safety-directions",
       "type": "string",
       "items": [
@@ -8973,7 +9295,7 @@
       ]
     },
     {
-      "name": "_72",
+      "name": "_77",
       "title": "List for page /removal/fishing",
       "type": "string",
       "items": [
@@ -8992,7 +9314,7 @@
       ]
     },
     {
-      "name": "_73",
+      "name": "_78",
       "title": "List for page /removal/fishing/fishing-operations",
       "type": "string",
       "items": [
@@ -9011,7 +9333,7 @@
       ]
     },
     {
-      "name": "_74",
+      "name": "_79",
       "title": "List for page /removal/miscellaneous",
       "type": "string",
       "items": [
@@ -9042,7 +9364,7 @@
       ]
     },
     {
-      "name": "_75",
+      "name": "_80",
       "title": "List for page /removal/miscellaneous/defence-activities",
       "type": "string",
       "items": [
@@ -9061,7 +9383,7 @@
       ]
     },
     {
-      "name": "_76",
+      "name": "_81",
       "title": "List for page /removal/miscellaneous/defence-activities/purpose",
       "type": "string",
       "items": [
@@ -9076,7 +9398,7 @@
       ]
     },
     {
-      "name": "_77",
+      "name": "_82",
       "title": "List for page /removal/miscellaneous/deepsea-mining",
       "type": "string",
       "items": [
@@ -9095,7 +9417,7 @@
       ]
     },
     {
-      "name": "_78",
+      "name": "_83",
       "title": "List for page /removal/miscellaneous/foreign-vessels/undertaker",
       "type": "string",
       "items": [
@@ -9114,7 +9436,7 @@
       ]
     },
     {
-      "name": "_79",
+      "name": "_84",
       "title": "List for page /dredging",
       "type": "string",
       "items": [
@@ -9145,7 +9467,7 @@
       ]
     },
     {
-      "name": "_80",
+      "name": "_85",
       "title": "List for page /dredging/navigational-dredging/authorisation",
       "type": "string",
       "items": [
@@ -9172,7 +9494,7 @@
       ]
     },
     {
-      "name": "_81",
+      "name": "_86",
       "title": "List for page /dredging/navigational-dredging/quantity",
       "type": "string",
       "items": [
@@ -9187,7 +9509,7 @@
       ]
     },
     {
-      "name": "_82",
+      "name": "_87",
       "title": "List for page /dredging/navigational-dredging/lse",
       "type": "string",
       "items": [
@@ -9213,7 +9535,7 @@
       ]
     },
     {
-      "name": "_83",
+      "name": "_88",
       "title": "List for page /dredging/coastal-drainage-flood",
       "type": "string",
       "items": [
@@ -9232,7 +9554,7 @@
       ]
     },
     {
-      "name": "_84",
+      "name": "_89",
       "title": "List for page /dredging/coastal-drainage-flood/maintenance",
       "type": "string",
       "items": [
@@ -9251,7 +9573,7 @@
       ]
     },
     {
-      "name": "_85",
+      "name": "_90",
       "title": "List for page /dredging/emergency",
       "type": "string",
       "items": [
@@ -9279,7 +9601,7 @@
       ]
     },
     {
-      "name": "_86",
+      "name": "_91",
       "title": "List for page /dredging/emergency/coastguard/purpose",
       "type": "string",
       "items": [
@@ -9302,7 +9624,7 @@
       ]
     },
     {
-      "name": "_87",
+      "name": "_92",
       "title": "List for page /dredging/safety-training",
       "type": "string",
       "items": [
@@ -9325,7 +9647,7 @@
       ]
     },
     {
-      "name": "_88",
+      "name": "_93",
       "title": "List for page /dredging/safety-training/coastguard/purpose",
       "type": "string",
       "items": [
@@ -9348,7 +9670,7 @@
       ]
     },
     {
-      "name": "_89",
+      "name": "_94",
       "title": "List for page /dredging/safety-training/safety-directions",
       "type": "string",
       "items": [
@@ -9371,7 +9693,7 @@
       ]
     },
     {
-      "name": "_90",
+      "name": "_95",
       "title": "List for page /dredging/miscellaneous",
       "type": "string",
       "items": [
@@ -9390,7 +9712,7 @@
       ]
     },
     {
-      "name": "_91",
+      "name": "_96",
       "title": "List for page /dredging/miscellaneous/deepsea-mining",
       "type": "string",
       "items": [
@@ -9409,7 +9731,7 @@
       ]
     },
     {
-      "name": "_92",
+      "name": "_97",
       "title": "List for page /incineration/method",
       "type": "string",
       "items": [
@@ -9436,7 +9758,7 @@
       ]
     },
     {
-      "name": "_93",
+      "name": "_98",
       "title": "List for page /elsewhere-in-the-world/activity-type",
       "type": "string",
       "items": [
@@ -9459,7 +9781,7 @@
       ]
     },
     {
-      "name": "_94",
+      "name": "_99",
       "title": "List for page /elsewhere-in-the-world/deposit",
       "type": "string",
       "items": [
@@ -9486,7 +9808,7 @@
       ]
     },
     {
-      "name": "_95",
+      "name": "_100",
       "title": "List for page /elsewhere-in-the-world/deposit/where-loaded",
       "type": "string",
       "items": [
@@ -9505,7 +9827,7 @@
       ]
     },
     {
-      "name": "_96",
+      "name": "_101",
       "title": "List for page /elsewhere-in-the-world/incineration",
       "type": "string",
       "items": [
@@ -9528,7 +9850,7 @@
       ]
     },
     {
-      "name": "_97",
+      "name": "_102",
       "title": "List for page /elsewhere-in-the-world/scuttling",
       "type": "string",
       "items": [
@@ -9551,7 +9873,7 @@
       ]
     },
     {
-      "name": "_98",
+      "name": "_103",
       "title": "List for page /elsewhere-in-the-world/scuttling/towed-or-propelled-from-uk",
       "type": "string",
       "items": [

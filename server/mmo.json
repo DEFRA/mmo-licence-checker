@@ -13,6 +13,7 @@
     "/": {
       "title": "Where will your activity take place?",
       "name": "location",
+      "hint": "'Sea' means any area which is submerged at mean high water spring tide and includes the waters of every estuary, river or channel where the tide flows at mean high water spring tide. Even waters in areas which are closed permanently or intermittently by a lock or other artificial means against the regular action of the tide are included, where seawater flows into or out from the area, either continuously or from time to time.",
       "options": [
         [
           "inSea",
@@ -44,11 +45,19 @@
         }
       ]
     },
+    "/licence-not-required-cables": {
+      "title": "Licence is not required",
+      "components": [
+        {
+          "html": "Based on the information provided a marine licence is not required for the activity.  Based on the information provided the activity requires a\r\nlicence for the element that falls to be located within 12NM. No exemption is available. Please note that a marine licence is required for the deposit of a cable protection associated with the laying of a cable"
+        }
+      ]
+    },
     "/licence-not-required-exemption-available-policy": {
       "title": "Licence is not required",
       "components": [
         {
-          "html": "You indicated your intent to place a marker which will be in place less than 24 hours.Based on the information provided your activity is one that meets the terms of a marine licence exemption and a marine licence is therefore not required. This exemption does not require any action from you before it is undertaken."
+          "html": "Based on the information provided your activity is one that meets the terms of a marine licence exemption and a marine licence is therefore not required. This exemption does not require any action from you before it is undertaken."
         }
       ]
     },
@@ -364,11 +373,27 @@
         }
       ]
     },
-    "/licence-required-no-exemption": {
+    "/licence-required-no-exemption-no-self-service": {
       "title": "Licence is required",
       "components": [
         {
           "html": "Based on the information provided the activity requires a\r\nlicence. No exemption is available and the activity is not suitable for self-service licensing.\r\n<br>\r\n<br>\r\n<a href=\"#\">Apply for a marine licence</a>"
+        }
+      ]
+    },
+    "/licence-required-no-exemption": {
+      "title": "Licence is required",
+      "components": [
+        {
+          "html": "Based on the information provided the activity requires a\r\nlicence. No exemption is available.\r\n<br>\r\n<br>\r\n<a href=\"#\">Apply for a marine licence</a>"
+        }
+      ]
+    },
+    "/licence-required-no-exemption-part-cables": {
+      "title": "Licence is required",
+      "components": [
+        {
+          "html": "You indicated that you activity involved the laying of a cable, part of which would fall to be located within 12NM and part outside of 12NM of the UK. Based on the information provided the activity requires a\r\nlicence for the element that falls to be located within 12NM. No exemption is available. Further it should be noted that a marine licence is required for the deposit of a cable protection proposed beyond 12 NM \r\n<br>\r\n<br>\r\n<a href=\"#\">Apply for a marine licence</a>"
         }
       ]
     },
@@ -467,7 +492,7 @@
         [
           "mooringOrNavigation",
           "Moorings or aids to navigation",
-          "/construction/maintenance/moorings" 
+          "/construction/maintenance/moorings"
         ],
         [
           "pontoons",
@@ -478,6 +503,11 @@
           "harbourWorks",
           "Harbour works",
           "/construction/maintenance/harbour-works"
+        ],
+        [
+          "cables",
+          "Cables",
+          "/construction/maintenance/cables"
         ],
         [
           "coastalProtectionDrainageOrFloodDefence",
@@ -495,7 +525,8 @@
           "/licence-required-no-exemption"
         ]
       ]
-    },"/construction/maintenance/moorings": {
+    },
+    "/construction/maintenance/moorings": {
       "title": "What is the purpose of the activity?",
       "section": "construction",
       "name": "maintenanceMooringPurpose",
@@ -550,7 +581,7 @@
       ]
     },
     "/construction/maintenance/moorings/undertaker/consent": {
-    "title": "Does the activity require consent from a harbour authority under local legislation",
+      "title": "Does the activity require consent from a harbour authority under local legislation",
       "section": "construction",
       "name": "maintenanceMooringConsent",
       "options": [
@@ -559,7 +590,7 @@
       ]
     },
     "/construction/maintenance/moorings/undertaker/approval": {
-    "title": "Has consent been granted",
+      "title": "Has consent been granted",
       "section": "construction",
       "name": "maintenanceMooringApproval",
       "options": [
@@ -568,7 +599,7 @@
       ]
     },
     "/construction/maintenance/pontoons": {
-    "title": "Is the purpose of the activity to provide a pontoon?",
+      "title": "Is the purpose of the activity to provide a pontoon?",
       "section": "construction",
       "name": "maintenancePontoonPurpose",
       "options": [
@@ -594,7 +625,7 @@
       ]
     },
     "/construction/maintenance/pontoons/consent": {
-    "title": "Does the activity require consent from a harbour authority under local legislation",
+      "title": "Does the activity require consent from a harbour authority under local legislation",
       "section": "construction",
       "name": "maintenancePontoonConsent",
       "options": [
@@ -603,7 +634,7 @@
       ]
     },
     "/construction/maintenance/pontoons/approval": {
-    "title": "Has consent been granted",
+      "title": "Has consent been granted",
       "section": "construction",
       "name": "maintenancePontoonApproval",
       "options": [
@@ -612,7 +643,7 @@
       ]
     },
     "/construction/maintenance/pontoons/deck": {
-    "title": "When complete will the deck of the pontoon concerned comprise of an area which exceeds 30m2",
+      "title": "When complete will the deck of the pontoon concerned comprise of an area which exceeds 30m2",
       "section": "construction",
       "name": "maintenancePontoonDeck",
       "options": [
@@ -621,7 +652,7 @@
       ]
     },
     "/construction/maintenance/pontoons/quantity": {
-    "title": "Will more than 10 pontoons be constructed or deposited in the 6 months prior to the commencement of this activity?",
+      "title": "Will more than 10 pontoons be constructed or deposited in the 6 months prior to the commencement of this activity?",
       "section": "construction",
       "name": "maintenancePontoonQuantity",
       "hint": "either by or on behalf of the harbour authority or with the consent required from and granted by the harbour authority",
@@ -631,7 +662,7 @@
       ]
     },
     "/construction/maintenance/harbour-works": {
-    "title": "Will the activity be carried out within the existing boundaries of the works being maintained?",
+      "title": "Will the activity be carried out within the existing boundaries of the works being maintained?",
       "section": "construction",
       "name": "maintenanceHarbourWorks",
       "options": [
@@ -653,6 +684,52 @@
           "someoneElse",
           "Someone else",
           "/licence-required-no-exemption"
+        ]
+      ]
+    },
+    "/construction/maintenance/cables": {
+      "title": "What is the purpose of the cable being maintained?",
+      "section": "construction",
+      "name": "cablesPurpose",
+      "options": [
+        [
+          "transferOfData",
+          "The transfer of data",
+          "/construction/maintenance/cables/location",
+          "e.g. international telecommunications cables"
+        ],
+        [
+          "transfer of electricity",
+          "The transfer of electricity",
+          "/construction/maintenance/cables/location",
+          "e.g. interconnector cables between continents"
+        ],
+        [
+          "other",
+          "Other",
+          "/licence-required-no-exemption"
+        ]
+      ]
+    },
+    "/construction/maintenance/cables/location": {
+      "title": "Where will the cable be laid?",
+      "section": "construction",
+      "name": "cablesPurpose",
+      "options": [
+        [
+          "inside12NM",
+          "Wholly inside 12NM",
+          "/licence-required-no-exemption"
+        ],
+        [
+          "outside12NM",
+          "Wholly outside 12NM",
+          "/licence-not-required-cables"
+        ],
+        [
+          "bothInsideOutside12NM",
+          "Part inside 12NW part outside 12NM",
+          "/licence-required-no-exemption-part-cables"
         ]
       ]
     },
@@ -724,7 +801,7 @@
       ]
     },
     "/construction/maintenance/bored-tunnel": {
-    "title": "Will the activity be carried out wholly under the sea and relate directly to the construction or operation of a bored tunnel?",
+      "title": "Will the activity be carried out wholly under the sea and relate directly to the construction or operation of a bored tunnel?",
       "section": "construction",
       "name": "mainteanceBoredTunnel",
       "options": [
@@ -733,7 +810,7 @@
       ]
     },
     "/construction/maintenance/bored-tunnel/affect": {
-    "title": "Will the activity significantly adversely affect any part of the environment of the UK marine area or the living resources that it supports?",
+      "title": "Will the activity significantly adversely affect any part of the environment of the UK marine area or the living resources that it supports?",
       "section": "construction",
       "name": "maintenanceBoredTunnelAffect",
       "options": [
@@ -751,7 +828,8 @@
           "Moorings or aids to navigation",
           "/construction/new/moorings"
         ],
-         ["pontoon",
+        [
+          "pontoon",
           "Pontoons",
           "/construction/new/pontoons"
         ],
@@ -759,6 +837,11 @@
           "floodEmergency",
           "Flood or flood risk",
           "/construction/new/flood-emergency"
+        ],
+        [
+          "cables",
+          "Cables",
+          "/construction/new/cables"
         ],
         [
           "miscellaneous",
@@ -822,7 +905,7 @@
       ]
     },
     "/construction/new/moorings/undertaker/consent": {
-    "title": "Does the activity require consent from a harbour authority under local legislation",
+      "title": "Does the activity require consent from a harbour authority under local legislation",
       "section": "construction",
       "name": "newMooringConsent",
       "options": [
@@ -831,7 +914,7 @@
       ]
     },
     "/construction/new/moorings/undertaker/approval": {
-    "title": "Has consent been granted",
+      "title": "Has consent been granted",
       "section": "construction",
       "name": "newMooringApproval",
       "options": [
@@ -840,7 +923,7 @@
       ]
     },
     "/construction/new/pontoons": {
-    "title": "Is the purpose of the activity to provide a pontoon?",
+      "title": "Is the purpose of the activity to provide a pontoon?",
       "section": "construction",
       "name": "newPontoonPurpose",
       "options": [
@@ -866,7 +949,7 @@
       ]
     },
     "/construction/new/pontoons/consent": {
-    "title": "Does the activity require consent from a harbour authority under local legislation",
+      "title": "Does the activity require consent from a harbour authority under local legislation",
       "section": "construction",
       "name": "newPontoonConsent",
       "options": [
@@ -875,7 +958,7 @@
       ]
     },
     "/construction/new/pontoons/approval": {
-    "title": "Has consent been granted",
+      "title": "Has consent been granted",
       "section": "construction",
       "name": "newPontoonApproval",
       "options": [
@@ -884,7 +967,7 @@
       ]
     },
     "/construction/new/pontoons/deck": {
-    "title": "When complete will the deck of the pontoon concerned comprise of an area which exceeds 30m2",
+      "title": "When complete will the deck of the pontoon concerned comprise of an area which exceeds 30m2",
       "section": "construction",
       "name": "newPontoonDeck",
       "options": [
@@ -893,7 +976,7 @@
       ]
     },
     "/construction/new/pontoons/quantity": {
-    "title": "Will more than 10 pontoons be constructed or deposited in the 6 months prior to the commencement of this activity?",
+      "title": "Will more than 10 pontoons be constructed or deposited in the 6 months prior to the commencement of this activity?",
       "section": "construction",
       "name": "newPontoonQuantity",
       "hint": "either by or on behalf of the harbour authority or with the consent required from and granted by the harbour authority",
@@ -918,6 +1001,52 @@
       "options": [
         "/licence-not-required-exemption-available-article-20",
         "/licence-required-no-exemption"
+      ]
+    },
+    "/construction/new/cables": {
+      "title": "What is the purpose of the cable being maintained?",
+      "section": "construction",
+      "name": "cablesPurpose",
+      "options": [
+        [
+          "transferOfData",
+          "The transfer of data",
+          "/construction/new/cables/location",
+          "e.g. international telecommunications cables"
+        ],
+        [
+          "transfer of electricity",
+          "The transfer of electricity",
+          "/construction/new/cables/location",
+          "e.g. interconnector cables between continents"
+        ],
+        [
+          "other",
+          "Other",
+          "/licence-required-no-exemption"
+        ]
+      ]
+    },
+    "/construction/new/cables/location": {
+      "title": "Where will the cable be laid?",
+      "section": "construction",
+      "name": "cablesPurpose",
+      "options": [
+        [
+          "inside12NM",
+          "Wholly inside 12NM",
+          "/licence-required-no-exemption"
+        ],
+        [
+          "outside12NM",
+          "Wholly outside 12NM",
+          "/licence-not-required-cables"
+        ],
+        [
+          "bothInsideOutside12NM",
+          "Part inside 12NW part outside 12NM",
+          "/licence-required-no-exemption-part-cables"
+        ]
       ]
     },
     "/construction/new/miscellaneous": {
@@ -970,7 +1099,7 @@
       ]
     },
     "/construction/new/miscellaneous/crossrail-act": {
-    "title": "Will the activity be carried out within the limits of deviation for scheduled works in exercise of powers conferred by the Crossrail Act 2008 in relation to those works or any work connected with them?",
+      "title": "Will the activity be carried out within the limits of deviation for scheduled works in exercise of powers conferred by the Crossrail Act 2008 in relation to those works or any work connected with them?",
       "section": "construction",
       "name": "newMiscellaneousCrossrailAct",
       "options": [
@@ -979,7 +1108,7 @@
       ]
     },
     "/construction/new/miscellaneous/bored-tunnel": {
-    "title": "Will the activity be carried out wholly under the sea and relate directly to the construction or operation of a bored tunnel?",
+      "title": "Will the activity be carried out wholly under the sea and relate directly to the construction or operation of a bored tunnel?",
       "section": "construction",
       "name": "newMiscellaneousBoredTunnel",
       "options": [
@@ -988,7 +1117,7 @@
       ]
     },
     "/construction/new/miscellaneous/bored-tunnel/affect": {
-    "title": "Will the activity significantly adversely affect any part of the environment of the UK marine area or the living resources that it supports?",
+      "title": "Will the activity significantly adversely affect any part of the environment of the UK marine area or the living resources that it supports?",
       "section": "construction",
       "name": "newMiscellaneousBoredTunnelAffect",
       "options": [
@@ -1065,7 +1194,7 @@
           "emergency",
           "Emergency",
           "/deposit/emergency-safety-pollution-response-accident-investigation",
-          "Including safety, pollution response and accident investigation"
+          "Including emergency works, safety, pollution response and accident investigation"
         ],
         [
           "fishing",
@@ -1220,7 +1349,7 @@
         "/licence-not-required-exemption-available-article-23",
         "/licence-required-no-exemption"
       ]
-    }, 
+    },
     "/deposit/maintenance/cables-pipelines": {
       "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline?",
       "section": "deposit",
@@ -1229,7 +1358,7 @@
         "/deposit/maintenance/cables-pipelines/emergency",
         "/licence-required-no-exemption"
       ]
-    }, 
+    },
     "/deposit/maintenance/cables-pipelines/emergency": {
       "title": "Are the circumstances serious, unexpected, and potentially dangerous requiring immediate action?",
       "section": "deposit",
@@ -1253,7 +1382,7 @@
       "section": "deposit",
       "name": "maintenanceCablesPipelinesExplosives",
       "options": [
-       "/licence-required-no-exemption",
+        "/licence-required-no-exemption",
         "/licence-not-required-exemption-available-article-34"
       ]
     },
@@ -1278,7 +1407,7 @@
           "/licence-required-no-exemption"
         ]
       ]
-    }, 
+    },
     "/deposit/fishing/shellfish-propagation-cultivation": {
       "title": "Will the activity involve the deposit of a shellfish, trestle, raft, cage, pole, rope, marker or line in the course of propagation or cultivation of shellfish?",
       "section": "deposit",
@@ -1287,13 +1416,13 @@
         "/deposit/fishing/shellfish-propagation-cultivation/obstruction",
         "/licence-required-no-exemption"
       ]
-    }, 
+    },
     "/deposit/fishing/shellfish-propagation-cultivation/obstruction": {
       "title": "Will the deposit cause or be likely to cause an obstruction or danger to navigation?",
       "section": "deposit",
       "name": "fishingShellfishPropogationCultivationObstruction",
       "options": [
-       "/licence-required-no-exemption",
+        "/licence-required-no-exemption",
         "/deposit/fishing/shellfish-propagation-cultivation/disposal-artificial-reef"
       ]
     },
@@ -1346,10 +1475,10 @@
       "section": "deposit",
       "name": "fishingOperationDisposal",
       "options": [
-       "/licence-required-no-exemption",
+        "/licence-required-no-exemption",
         "/licence-not-required-exemption-available-article-12"
       ]
-    }, 
+    },
     "/deposit/emergency-safety-pollution-response-accident-investigation": {
       "title": "What does your activity relate to?",
       "section": "deposit",
@@ -1413,7 +1542,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/flood": {
-    "title": "Will the activity be carried out by or on behalf of the Environment Agency",
+      "title": "Will the activity be carried out by or on behalf of the Environment Agency",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionFloodUndertaker",
       "options": [
@@ -1422,7 +1551,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/flood/emergency": {
-    "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action in response to flood or imminent risk of flood?",
+      "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action in response to flood or imminent risk of flood?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionFloodEmergency",
       "options": [
@@ -1431,7 +1560,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/cables-pipelines": {
-    "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline",
+      "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCablesPipelines",
       "options": [
@@ -1440,7 +1569,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/cables-pipelines/emergency": {
-    "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action?",
+      "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCablesPipelinesEmergency",
       "options": [
@@ -1449,7 +1578,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/cables-pipelines/protection": {
-    "title": "Will the activity proposed under the exemption include the deposit of rock or other materials for the purpose of providing cable or pipeline protection?",
+      "title": "Will the activity proposed under the exemption include the deposit of rock or other materials for the purpose of providing cable or pipeline protection?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCablesPipelinesProtection",
       "options": [
@@ -1458,7 +1587,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/cables-pipelines/explosives": {
-    "title": "Does the activity involve the deposit or use of explosives?",
+      "title": "Does the activity involve the deposit or use of explosives?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCablesPipelinesExplosives",
       "options": [
@@ -1467,7 +1596,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/coastguard": {
-    "title": "Will the activity be carried out by or on behalf the Secretary of State for Transport, acting through the Maritime and Coastguard Agency?",
+      "title": "Will the activity be carried out by or on behalf the Secretary of State for Transport, acting through the Maritime and Coastguard Agency?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCoastguardUndertaker",
       "options": [
@@ -1503,7 +1632,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/flares": {
-    "title": "Will the activity involve the deposit or use of a distress flare, smoke float or similar pyrotechnic substance or object",
+      "title": "Will the activity involve the deposit or use of a distress flare, smoke float or similar pyrotechnic substance or object",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionObject",
       "options": [
@@ -1539,7 +1668,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/salvage": {
-    "title": "Will the deposit be made in the course of a salvage operation for the purpose of ensuring the safety of a vessel or preventing pollution?",
+      "title": "Will the deposit be made in the course of a salvage operation for the purpose of ensuring the safety of a vessel or preventing pollution?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionSalvage",
       "options": [
@@ -1588,7 +1717,7 @@
           "marineChemicalMarineOilTreatment",
           "Marine chemical and marine oil treamtment substances",
           "/deposit/emergency-safety-pollution-response-accident-investigation/chemical-oil-treatment"
-        ],  
+        ],
         [
           "pollutionPreventionPart6MerchanntShippingAct1995",
           "Activities within Part 6 of the Merchant Shipping Act 1995",
@@ -1602,7 +1731,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-response-equipment": {
-    "title": "Is the equipment to be deposited for the purpose of controlling, containing or recovering oil, a mixture containing oil, chemicals, flotsam or algae blooms?",
+      "title": "Is the equipment to be deposited for the purpose of controlling, containing or recovering oil, a mixture containing oil, chemicals, flotsam or algae blooms?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionPollutionResponseEquipmentPurpose",
       "options": [
@@ -1611,7 +1740,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-response-equipment/explosives": {
-    "title": "Will the activity involve the deposit or use of an explosive substance or object?",
+      "title": "Will the activity involve the deposit or use of an explosive substance or object?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionPollutionResponseEquipmentExplosives",
       "options": [
@@ -1647,7 +1776,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/chemical-oil-treatment/approved": {
-    "title": "Is the substance to be deposited one which is approved for the purposes by the MMO?",
+      "title": "Is the substance to be deposited one which is approved for the purposes by the MMO?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionChemicalOilTreatmentApproved",
       "options": [
@@ -1656,7 +1785,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/chemical-oil-treatment/conditions": {
-    "title": "Will the substance be used in accordance with conditions to which the approval is subject?",
+      "title": "Will the substance be used in accordance with conditions to which the approval is subject?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionChemicalOilTreatmentConditions",
       "options": [
@@ -1665,7 +1794,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/offshore-chemical-oil": {
-    "title": "Is a permit required to carry out the activity under the Offshore Chemical Regulations 2002?",
+      "title": "Is a permit required to carry out the activity under the Offshore Chemical Regulations 2002?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionDischargeOffshoreChemicalOilPermit1",
       "options": [
@@ -1674,7 +1803,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/offshore-chemical-oil/Permit2": {
-    "title": "Is a permit required to carry out the activity under the Offshore Petroleum Activities (Oil and Pollution Prevention and Control) Regulations 2005?",
+      "title": "Is a permit required to carry out the activity under the Offshore Petroleum Activities (Oil and Pollution Prevention and Control) Regulations 2005?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionDischargeOffshoreChemicalOilPermit2",
       "options": [
@@ -1683,7 +1812,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/pollution-prevention": {
-    "title": "Does the activity proposed to be carried out fall within the subject matter of Part 6 of the Merchant Shipping Act 1995 (prevention of pollution)",
+      "title": "Does the activity proposed to be carried out fall within the subject matter of Part 6 of the Merchant Shipping Act 1995 (prevention of pollution)",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionPollutionPrevention",
       "options": [
@@ -1692,7 +1821,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/fire-fighting": {
-    "title": "Will the activity be carried out for the purpose of fighting or preventing the spread of fire?",
+      "title": "Will the activity be carried out for the purpose of fighting or preventing the spread of fire?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionFireFighting",
       "options": [
@@ -1701,7 +1830,7 @@
       ]
     },
     "/deposit/emergency-safety-pollution-response-accident-investigation/air-accident-investigation": {
-    "title": "Will the activity be carried out for the purpose of recovering a substance or object as part of an official investigation into an accident involving aricraft?",
+      "title": "Will the activity be carried out for the purpose of recovering a substance or object as part of an official investigation into an accident involving aricraft?",
       "section": "deposit",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionAirAccidentInvestigation",
       "options": [
@@ -1764,7 +1893,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/temporary-markers/obstruction": {
-    "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
+      "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationTemporaryMarkerObstruction",
       "options": [
@@ -1773,7 +1902,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/temporary-markers/mpa": {
-    "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
+      "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationTemporaryMarkerMpa",
       "options": [
@@ -1782,7 +1911,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/temporary-markers/mpa-management": {
-    "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
+      "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationTemporaryMarkerMpa",
       "options": [
@@ -1931,7 +2060,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/moorings/consent": {
-    "title": "Does the activity require consent from a harbour authority under local legislation",
+      "title": "Does the activity require consent from a harbour authority under local legislation",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationMooringConsent",
       "options": [
@@ -1940,7 +2069,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/moorings/approval": {
-    "title": "Has consent been granted",
+      "title": "Has consent been granted",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationMooringApproval",
       "options": [
@@ -1949,7 +2078,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/pontoons": {
-    "title": "Is the purpose of the activity to provide a pontoon?",
+      "title": "Is the purpose of the activity to provide a pontoon?",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationPontoonPurpose",
       "options": [
@@ -1975,7 +2104,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/pontoon/consent": {
-    "title": "Does the activity require consent from a harbour authority under local legislation",
+      "title": "Does the activity require consent from a harbour authority under local legislation",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationPontoonConsent",
       "options": [
@@ -1984,7 +2113,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/pontoon/approval": {
-    "title": "Has consent been granted",
+      "title": "Has consent been granted",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationPontoonApproval",
       "options": [
@@ -1993,7 +2122,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/pontoon/deck": {
-    "title": "When complete will the deck of the pontoon concerned comprise of an area which exceeds 30m2",
+      "title": "When complete will the deck of the pontoon concerned comprise of an area which exceeds 30m2",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationPontoonDeck",
       "options": [
@@ -2002,7 +2131,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/pontoon/quantity": {
-    "title": "will more than 10 pontoons be constructed or deposited in the 6 months prior to the commencement of this activity?",
+      "title": "will more than 10 pontoons be constructed or deposited in the 6 months prior to the commencement of this activity?",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationPontoonDeck",
       "hint": "either by or on behalf of the harbour authority or with the consent required from and granted by the harbour authority",
@@ -2012,7 +2141,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/dive-trails": {
-    "title": "Is the purpose of the activity to place or secure signage or other identifying markers to a wreck?",
+      "title": "Is the purpose of the activity to place or secure signage or other identifying markers to a wreck?",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationDiveTrails",
       "options": [
@@ -2021,7 +2150,7 @@
       ]
     },
     "/deposit/markers-moorings-pontoons-aids-to-navigation/dive-trails/restricted-area": {
-    "title": "Is the wreck within an area designated as a restricted area under the Protection of Wrecks Act 1973?",
+      "title": "Is the wreck within an area designated as a restricted area under the Protection of Wrecks Act 1973?",
       "section": "deposit",
       "name": "markerMooringPontoonAidToNavigationDiveTrailsRestrictedArea",
       "options": [
@@ -2030,7 +2159,7 @@
       ]
     },
     "/deposit/scientific-research": {
-      "title": "Scientific research",
+      "title": "What does the activity relate to?",
       "section": "deposit",
       "name": "scientificResearchActivityType",
       "options": [
@@ -2052,7 +2181,7 @@
       ]
     },
     "/deposit/scientific-research/scientific-equipment": {
-    "title": "Is the object to be deposited a scientific instrument or equipment associated with such an instrument?",
+      "title": "Is the object to be deposited a scientific instrument or equipment associated with such an instrument?",
       "section": "deposit",
       "name": "scientificInstrumentsDefinition",
       "options": [
@@ -2061,7 +2190,7 @@
       ]
     },
     "/deposit/scientific-research/scientific-equipment/survey": {
-    "title": "Is the instrument or equipment to be deposited as part of a scientific experiment or survey?",
+      "title": "Is the instrument or equipment to be deposited as part of a scientific experiment or survey?",
       "section": "deposit",
       "name": "scientificInstrumentsSurvey",
       "options": [
@@ -2070,7 +2199,7 @@
       ]
     },
     "/deposit/scientific-research/scientific-equipment/obstruction": {
-    "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
+      "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
       "section": "deposit",
       "name": "scientificResearchScientificEquipmentObstruction",
       "options": [
@@ -2079,7 +2208,7 @@
       ]
     },
     "/deposit/scientific-research/scientific-equipment/mpa": {
-    "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
+      "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
       "section": "deposit",
       "name": "scientificResearchScientificEquipmentMpa",
       "options": [
@@ -2088,7 +2217,7 @@
       ]
     },
     "/deposit/scientific-research/scientific-equipment/mpa-management": {
-    "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
+      "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
       "section": "deposit",
       "name": "scientificResearchScientificEquipmentMpa",
       "options": [
@@ -2127,7 +2256,7 @@
       ]
     },
     "/deposit/scientific-research/scientific-equipment/disposal": {
-    "title": "Is the deposit made for the purpose of disposal?",
+      "title": "Is the deposit made for the purpose of disposal?",
       "section": "deposit",
       "name": "scientificResearchScientificEquipmentDisposal",
       "options": [
@@ -2136,7 +2265,7 @@
       ]
     },
     "/deposit/scientific-research/tracers-reagents": {
-    "title": "Is the reagent or tracer approved for use by the MMO?",
+      "title": "Is the reagent or tracer approved for use by the MMO?",
       "section": "deposit",
       "name": "scientificResearchTracersReagents",
       "options": [
@@ -2145,7 +2274,7 @@
       ]
     },
     "/deposit/scientific-research/tracers-reagents/obstruction": {
-    "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
+      "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
       "section": "deposit",
       "name": "scientificResearchTracersReagentsObstruction",
       "options": [
@@ -2154,7 +2283,7 @@
       ]
     },
     "/deposit/scientific-research/tracers-reagents/mpa": {
-    "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
+      "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
       "section": "deposit",
       "name": "scientificResearchTracersReagentsMpa",
       "options": [
@@ -2163,7 +2292,7 @@
       ]
     },
     "/deposit/scientific-research/tracers-reagents/mpa-management": {
-    "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
+      "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
       "section": "deposit",
       "name": "scientificResearchTracersReagentsMpa",
       "options": [
@@ -2239,7 +2368,7 @@
       ]
     },
     "/deposit/vessels/launch": {
-    "title": "Is the purpose of the deposit to facilitate the launching of a vehicle, vessel, aircraft, marine structure or floating container?",
+      "title": "Is the purpose of the deposit to facilitate the launching of a vehicle, vessel, aircraft, marine structure or floating container?",
       "section": "deposit",
       "name": "vesselsLaunchPurpose",
       "options": [
@@ -2248,7 +2377,7 @@
       ]
     },
     "/deposit/vessels/launch/construction": {
-    "title": "Will the activity involve construction of any kind?",
+      "title": "Will the activity involve construction of any kind?",
       "section": "deposit",
       "name": "vesselsLaunchConstruction",
       "options": [
@@ -2257,7 +2386,7 @@
       ]
     },
     "/deposit/vessels/navigation": {
-    "title": "Will the deposit be made from a vehicle, vessel, aircraft or marine strucutre in the normal course of its maintenance or navigation?",
+      "title": "Will the deposit be made from a vehicle, vessel, aircraft or marine strucutre in the normal course of its maintenance or navigation?",
       "section": "deposit",
       "name": "vesselsNavigation",
       "options": [
@@ -2266,7 +2395,7 @@
       ]
     },
     "/deposit/vessels/navigation/disposal": {
-    "title": "Will the substance or object deposited be recovered at any point?",
+      "title": "Will the substance or object deposited be recovered at any point?",
       "section": "deposit",
       "name": "vesselsNavigationDisposal",
       "options": [
@@ -2275,7 +2404,7 @@
       ]
     },
     "/deposit/vessels/navigation/explosives": {
-    "title": "Will the activity involve the deposit or use of any explosive substance or article?",
+      "title": "Will the activity involve the deposit or use of any explosive substance or article?",
       "section": "deposit",
       "name": "vesselsNavigationExplosive",
       "options": [
@@ -2284,7 +2413,7 @@
       ]
     },
     "/deposit/vessels/aggregate-dredging": {
-    "title": "Was the substance or object to be deposited taken from the sea in the course of dredging for aggregates?",
+      "title": "Was the substance or object to be deposited taken from the sea in the course of dredging for aggregates?",
       "section": "deposit",
       "name": "vesselsAggregateDredging",
       "options": [
@@ -2315,7 +2444,7 @@
       ]
     },
     "/deposit/vessels/aggregate-dredging/water-location": {
-    "title": "Will the water be deposited by overflow or pumped discharge from the hold of the vessel at the site of dredging, either during or following its completion, and or on the return journey of the vessel?",
+      "title": "Will the water be deposited by overflow or pumped discharge from the hold of the vessel at the site of dredging, either during or following its completion, and or on the return journey of the vessel?",
       "section": "deposit",
       "name": "vesselsAggregateDredgingWaterlocation",
       "options": [
@@ -2324,7 +2453,7 @@
       ]
     },
     "/deposit/vessels/aggregate-dredging/something-else-location": {
-    "title": "Will the substance or object be deposited at the site where the dredging took place?",
+      "title": "Will the substance or object be deposited at the site where the dredging took place?",
       "section": "deposit",
       "name": "vesselsAggregateDredgingSomethingElselocation",
       "options": [
@@ -2333,7 +2462,7 @@
       ]
     },
     "/deposit/vessels/dismantling-ships": {
-    "title": "Will the deposit be made as part of the dismantling of a ship that is waste?",
+      "title": "Will the deposit be made as part of the dismantling of a ship that is waste?",
       "section": "deposit",
       "name": "vesselsDismantlingShips",
       "options": [
@@ -2342,7 +2471,7 @@
       ]
     },
     "/deposit/vessels/dismantling-ships/explosives": {
-    "title": "Will the activity involve the deposit or use of any explosive substance or article?",
+      "title": "Will the activity involve the deposit or use of any explosive substance or article?",
       "section": "deposit",
       "name": "vesselsDismantlingShipsExplosives",
       "options": [
@@ -2351,7 +2480,7 @@
       ]
     },
     "/deposit/vessels/foreign-vessels": {
-    "title": "Will the activity be carried out in exercise of a right under rules of international law?",
+      "title": "Will the activity be carried out in exercise of a right under rules of international law?",
       "section": "deposit",
       "name": "vesselsForeignVessels",
       "options": [
@@ -2431,7 +2560,7 @@
       ]
     },
     "/deposit/miscellaneous/defence-activities/restriction": {
-    "title": "Will the activity involve construction or dredging of any kind?",
+      "title": "Will the activity involve construction or dredging of any kind?",
       "section": "deposit",
       "name": "defenceActivityRestriction",
       "options": [
@@ -2479,7 +2608,7 @@
       ]
     },
     "/deposit/miscellaneous/crossrail-act": {
-    "title": "Will the activity be carried out within the limits of deviation for scheduled works in exercise of powers conferred by the Crossrail Act 2008 in relation to those works or any work connected with them?",
+      "title": "Will the activity be carried out within the limits of deviation for scheduled works in exercise of powers conferred by the Crossrail Act 2008 in relation to those works or any work connected with them?",
       "section": "deposit",
       "name": "depsoitMiscellaneousCrossrailAct",
       "options": [
@@ -2520,7 +2649,8 @@
         [
           "floatingContainer",
           "A floating container in the sea",
-          "/removal/activity-type"
+          "/removal/lifting-bag",
+          "Includes using lifting bags"
         ],
         [
           "landStructure",
@@ -2531,6 +2661,37 @@
           "other",
           "Other",
           "/licence-not-required"
+        ]
+      ]
+    },
+    "/removal/lifting-bag": {
+      "title": "Will the object(s) to be removed require a total lifting capacity greater than 100KG?",
+      "section": "removal",
+      "name": "liftingBagCapacity",
+      "options": [
+        "/removal/activity-type",
+        "/removal/lifting-bag/object-age"
+      ]
+    },
+    "/removal/lifting-bag/object-age": {
+      "title": "How long has the object to be removed been on the seabed?",
+      "section": "removal",
+      "name": "liftingBagObjectAge",
+      "options": [
+        [
+          "lessThan12Months",
+          "Less than 12 months",
+          "/licence-not-required-exemption-available-policy"
+        ],
+        [
+          "longerThan12Months",
+          "Longer than 12 months",
+          "/removal/activity-type"
+        ],
+        [
+          "dont know",
+          "Not sure",
+          "/removal/activity-type"
         ]
       ]
     },
@@ -2571,7 +2732,7 @@
           "emergency",
           "Emergency",
           "/removal/emergency-safety-pollution-response-accident-investigation",
-          "Including safety, pollution response and accident investigation"
+          "Including emergency works, safety, pollution response and accident investigation"
         ],
         [
           "fishing",
@@ -2751,7 +2912,7 @@
       ]
     },
     "/removal/markers-moorings-pontoons-aids-to-navigation/moorings/consent": {
-    "title": "Does the activity require consent from a harbour authority under local legislation",
+      "title": "Does the activity require consent from a harbour authority under local legislation",
       "section": "removal",
       "name": "markerMooringPontoonAidToNavigationMooringConsent",
       "options": [
@@ -2760,7 +2921,7 @@
       ]
     },
     "/removal/markers-moorings-pontoons-aids-to-navigation/moorings/approval": {
-    "title": "Has consent been granted",
+      "title": "Has consent been granted",
       "section": "removal",
       "name": "markerMooringPontoonAidToNavigationMooringApproval",
       "options": [
@@ -2769,7 +2930,7 @@
       ]
     },
     "/removal/markers-moorings-pontoons-aids-to-navigation/pontoons": {
-    "title": "Is the purpose of the activity to removal a pontoon?",
+      "title": "Is the purpose of the activity to removal a pontoon?",
       "section": "removal",
       "name": "markerMooringPontoonAidToNavigationPontoonPurpose",
       "options": [
@@ -2795,7 +2956,7 @@
       ]
     },
     "/removal/markers-moorings-pontoons-aids-to-navigation/pontoon/consent": {
-    "title": "Does the activity require consent from a harbour authority under local legislation",
+      "title": "Does the activity require consent from a harbour authority under local legislation",
       "section": "removal",
       "name": "markerMooringPontoonAidToNavigationPontoonConsent",
       "options": [
@@ -2804,7 +2965,7 @@
       ]
     },
     "/removal/markers-moorings-pontoons-aids-to-navigation/pontoon/approval": {
-    "title": "Has consent been granted",
+      "title": "Has consent been granted",
       "section": "removal",
       "name": "markerMooringPontoonAidToNavigationPontoonApproval",
       "options": [
@@ -2813,7 +2974,7 @@
       ]
     },
     "/removal/markers-moorings-pontoons-aids-to-navigation/pontoon/deck": {
-    "title": "When complete will the deck of the pontoon concerned comprise of an area which exceeds 30m2",
+      "title": "When complete will the deck of the pontoon concerned comprise of an area which exceeds 30m2",
       "section": "removal",
       "name": "markerMooringPontoonAidToNavigationPontoonDeck",
       "options": [
@@ -2822,7 +2983,7 @@
       ]
     },
     "/removal/markers-moorings-pontoons-aids-to-navigation/dive-trails": {
-    "title": "Is the purpose of the activity to remove signage or other identifying markers from a wreck?",
+      "title": "Is the purpose of the activity to remove signage or other identifying markers from a wreck?",
       "section": "removal",
       "name": "markerMooringPontoonAidToNavigationDiveTrails",
       "options": [
@@ -2831,7 +2992,7 @@
       ]
     },
     "/removal/markers-moorings-pontoons-aids-to-navigation/dive-trails/restricted-area": {
-    "title": "Is the wreck within an area designated as a restricted area under the Protection of Wrecks Act 1973?",
+      "title": "Is the wreck within an area designated as a restricted area under the Protection of Wrecks Act 1973?",
       "section": "removal",
       "name": "markerMooringPontoonAidToNavigationDiveTrailsRestrictedArea",
       "options": [
@@ -2840,7 +3001,7 @@
       ]
     },
     "/removal/scientific-research": {
-      "title": "Scientific research",
+      "title": "What does the activity relate to?",
       "section": "removal",
       "name": "scientificResearchActivityType",
       "options": [
@@ -2862,7 +3023,7 @@
       ]
     },
     "/removal/scientific-research/scientific-equipment": {
-    "title": "Is the object to be removed a scientific instrument or equipment associated with such an instrument?",
+      "title": "Is the object to be removed a scientific instrument or equipment associated with such an instrument?",
       "section": "removal",
       "name": "scientificInstrumentsDefinition",
       "options": [
@@ -2871,7 +3032,7 @@
       ]
     },
     "/removal/scientific-research/scientific-equipment/survey": {
-    "title": "Was the instrument or associated equipment originally deposited as part of a scientific experiment or survey?",
+      "title": "Was the instrument or associated equipment originally deposited as part of a scientific experiment or survey?",
       "section": "removal",
       "name": "scientificInstrumentsSurvey",
       "options": [
@@ -2880,7 +3041,7 @@
       ]
     },
     "/removal/scientific-research/scientific-equipment/mpa": {
-    "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
+      "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
       "section": "removal",
       "name": "scientificResearchScientificEquipmentMpa",
       "options": [
@@ -2889,7 +3050,7 @@
       ]
     },
     "/removal/scientific-research/scientific-equipment/mpa-management": {
-    "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
+      "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
       "section": "removal",
       "name": "scientificResearchScientificEquipmentMpa",
       "options": [
@@ -2928,7 +3089,7 @@
       ]
     },
     "/removal/scientific-research/samples": {
-    "title": "Is the purpose of the activity to take a sample of material for testing or analysis?",
+      "title": "Is the purpose of the activity to take a sample of material for testing or analysis?",
       "section": "removal",
       "name": "samplesPurpose",
       "options": [
@@ -2937,7 +3098,7 @@
       ]
     },
     "/removal/scientific-research/samples/volume": {
-    "title": "Will the sample to be collected be of a volume of 1m3 or less?",
+      "title": "Will the sample to be collected be of a volume of 1m3 or less?",
       "section": "removal",
       "name": "samplesVolume",
       "options": [
@@ -2946,7 +3107,7 @@
       ]
     },
     "/removal/scientific-research/samples/obstruction": {
-    "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
+      "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
       "section": "removal",
       "name": "scientificResearchSamplesObstruction",
       "options": [
@@ -2955,7 +3116,7 @@
       ]
     },
     "/removal/scientific-research/samples/mpa": {
-    "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
+      "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
       "section": "removal",
       "name": "scientificResearchSamplesMpa",
       "options": [
@@ -2964,7 +3125,7 @@
       ]
     },
     "/removal/scientific-research/samples/mpa-management": {
-    "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
+      "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
       "section": "removal",
       "name": "scientificResearchSamplesMpa",
       "options": [
@@ -3003,7 +3164,7 @@
       ]
     },
     "/removal/maintenance": {
-      "title": "Maintenance activity",
+      "title": "What does the activity relate to?",
       "section": "removal",
       "name": "maintenanceActivityType",
       "options": [
@@ -3095,7 +3256,7 @@
         "/licence-not-required-exemption-available-article-23",
         "/licence-required-no-exemption"
       ]
-    }, 
+    },
     "/removal/maintenance/cables-pipelines": {
       "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline?",
       "section": "removal",
@@ -3104,7 +3265,7 @@
         "/removal/maintenance/cables-pipelines/emergency",
         "/licence-required-no-exemption"
       ]
-    }, 
+    },
     "/removal/maintenance/cables-pipelines/emergency": {
       "title": "Are the circumstances serious, unexpected, and potentially dangerous requiring immediate action?",
       "section": "removal",
@@ -3122,7 +3283,7 @@
         [
           "deadAnimals",
           "Dead animals",
-         "/removal/waste/dead-animals"
+          "/removal/waste/dead-animals"
         ],
         [
           "litterSeaweed",
@@ -3165,7 +3326,7 @@
       ]
     },
     "/removal/waste/dead-animals/undertaker/mpa": {
-    "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
+      "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
       "section": "removal",
       "name": "wasteDeadAnimalMpa",
       "options": [
@@ -3174,7 +3335,7 @@
       ]
     },
     "/removal/waste/dead-animals/undertaker/mpa-management": {
-    "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
+      "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
       "section": "removal",
       "name": "wasteDeadAnimalMpaManagement",
       "options": [
@@ -3231,7 +3392,7 @@
       ]
     },
     "/removal/waste/litter-seaweed/mpa": {
-    "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
+      "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
       "section": "removal",
       "name": "wasteLitterSeaweedMpa",
       "options": [
@@ -3240,7 +3401,7 @@
       ]
     },
     "/removal/waste/litter-seaweed/mpa-management": {
-    "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
+      "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
       "section": "removal",
       "name": "wasteLitterSeaweedMpaManagement",
       "options": [
@@ -3297,7 +3458,7 @@
       ]
     },
     "/removal/waste/accidental-deposits/obstruction": {
-    "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
+      "title": "Will the activity cause or be likely to cause an obstruction or danger to navigation?",
       "section": "removal",
       "name": "wasteAccidentalDepositsObstruction",
       "options": [
@@ -3306,7 +3467,7 @@
       ]
     },
     "/removal/waste/accidental-deposits/mpa": {
-    "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
+      "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
       "section": "removal",
       "name": "wasteAccidentalDepositsMpa",
       "options": [
@@ -3315,7 +3476,7 @@
       ]
     },
     "/removal/waste/accidental-deposits/mpa-management": {
-    "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
+      "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
       "section": "removal",
       "name": "wasteAccidentalDepositsMpaManagement",
       "options": [
@@ -3386,7 +3547,7 @@
       ]
     },
     "/removal/waste/obstruction-danger-navigation/purpose": {
-    "title": "Is the purpose of the activity to remove an object causing or likely to cause an obstruction or danger to navigation?",
+      "title": "Is the purpose of the activity to remove an object causing or likely to cause an obstruction or danger to navigation?",
       "section": "removal",
       "name": "wasteObstructionDangerNavigationPurpose",
       "options": [
@@ -3423,7 +3584,7 @@
           "safetyDirections",
           "Safety directions under the Merchant Shipping Act 1995",
           "/removal/emergency-safety-pollution-response-accident-investigation/safety-directions"
-        ],  
+        ],
         [
           "pollutionPreventionPart6MerchanntShippingAct1995",
           "Pollution prevention - Activities within Part 6 of the Merchant Shipping Act 1995",
@@ -3447,7 +3608,7 @@
       ]
     },
     "/removal/emergency-safety-pollution-response-accident-investigation/flood": {
-    "title": "Will the activity be carried out by or on behalf of the Environment Agency",
+      "title": "Will the activity be carried out by or on behalf of the Environment Agency",
       "section": "removal",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionFloodUndertaker",
       "options": [
@@ -3456,7 +3617,7 @@
       ]
     },
     "/removal/emergency-safety-pollution-response-accident-investigation/flood/emergency": {
-    "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action in response to flood or imminent risk of flood?",
+      "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action in response to flood or imminent risk of flood?",
       "section": "removal",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionFloodEmergency",
       "options": [
@@ -3465,7 +3626,7 @@
       ]
     },
     "/removal/emergency-safety-pollution-response-accident-investigation/cables-pipelines": {
-    "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline",
+      "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline",
       "section": "removal",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCablesPipelines",
       "options": [
@@ -3474,7 +3635,7 @@
       ]
     },
     "/removal/emergency-safety-pollution-response-accident-investigation/cables-pipelines/emergency": {
-    "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action?",
+      "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action?",
       "section": "removal",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCablesPipelinesEmergency",
       "options": [
@@ -3483,7 +3644,7 @@
       ]
     },
     "/removal/emergency-safety-pollution-response-accident-investigation/coastguard": {
-    "title": "Will the activity be carried out by or on behalf the Secretary of State for Transport, acting through the Maritime and Coastguard Agency?",
+      "title": "Will the activity be carried out by or on behalf the Secretary of State for Transport, acting through the Maritime and Coastguard Agency?",
       "section": "removal",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionCoastguardUndertaker",
       "options": [
@@ -3519,7 +3680,7 @@
       ]
     },
     "/removal/emergency-safety-pollution-response-accident-investigation/salvage": {
-    "title": "Will the activity be carried out in the course of a salvage operation for the purpose of ensuring the safety of a vessel or preventing pollution?",
+      "title": "Will the activity be carried out in the course of a salvage operation for the purpose of ensuring the safety of a vessel or preventing pollution?",
       "section": "removal",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionSalvage",
       "options": [
@@ -3555,7 +3716,7 @@
       ]
     },
     "/removal/emergency-safety-pollution-response-accident-investigation/pollution-prevention": {
-    "title": "Does the activity proposed to be carried out fall within the subject matter of Part 6 of the Merchant Shipping Act 1995 (prevention of pollution)",
+      "title": "Does the activity proposed to be carried out fall within the subject matter of Part 6 of the Merchant Shipping Act 1995 (prevention of pollution)",
       "section": "removal",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionPollutionPrevention",
       "options": [
@@ -3564,7 +3725,7 @@
       ]
     },
     "/removal/emergency-safety-pollution-response-accident-investigation/fire-fighting": {
-    "title": "Will the activity be carried out for the purpose of fighting or preventing the spread of fire?",
+      "title": "Will the activity be carried out for the purpose of fighting or preventing the spread of fire?",
       "section": "removal",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionFireFighting",
       "options": [
@@ -3573,7 +3734,7 @@
       ]
     },
     "/removal/emergency-safety-pollution-response-accident-investigation/air-accident-investigation": {
-    "title": "Will the activity be carried out for the purpose of recovering a substance or object as part of an official investigation into an accident involving aricraft?",
+      "title": "Will the activity be carried out for the purpose of recovering a substance or object as part of an official investigation into an accident involving aricraft?",
       "section": "removal",
       "name": "emergencySafetyPollutionResponseAccidentInvestiagtionAirAccidentInvestigation",
       "options": [
@@ -3582,7 +3743,7 @@
       ]
     },
     "/removal/fishing": {
-      "title": "Fishing activity",
+      "title": "What does the activity relate to?",
       "section": "removal",
       "name": "fishingActivityType",
       "options": [
@@ -3602,7 +3763,7 @@
           "/licence-required-no-exemption"
         ]
       ]
-    }, 
+    },
     "/removal/fishing/shellfish-propagation-cultivation": {
       "title": "Will the activity be carried out for the purpose of moving or removing shellfish within the sea in the course of its propagation or cultivation?",
       "section": "removal",
@@ -3611,13 +3772,13 @@
         "/removal/fishing/shellfish-propagation-cultivation/obstruction",
         "/licence-required-no-exemption"
       ]
-    }, 
+    },
     "/removal/fishing/shellfish-propagation-cultivation/obstruction": {
       "title": "Will the deposit cause or be likely to cause an obstruction or danger to navigation?",
       "section": "removal",
       "name": "fishingShellfishPropogationCultivationObstruction",
       "options": [
-       "/licence-required-no-exemption",
+        "/licence-required-no-exemption",
         "/licence-not-required-exemption-available-article-13"
       ]
     },
@@ -3703,7 +3864,7 @@
       ]
     },
     "/removal/miscellaneous/defence-activities/restriction": {
-    "title": "Will the activity involve construction or dredging of any kind?",
+      "title": "Will the activity involve construction or dredging of any kind?",
       "section": "removal",
       "name": "defenceActivityRestriction",
       "options": [
@@ -3751,7 +3912,7 @@
       ]
     },
     "/removal/miscellaneous/crossrail-act": {
-    "title": "Will the activity be carried out within the limits of deviation for scheduled works in exercise of powers conferred by the Crossrail Act 2008 in relation to those works or any work connected with them?",
+      "title": "Will the activity be carried out within the limits of deviation for scheduled works in exercise of powers conferred by the Crossrail Act 2008 in relation to those works or any work connected with them?",
       "section": "removal",
       "name": "miscellaneousCrossrailAct",
       "options": [
@@ -3760,7 +3921,7 @@
       ]
     },
     "/removal/miscellaneous/dismantling-ships": {
-    "title": "Will the activity be carried out as part of the dismantling of a ship that is waste?",
+      "title": "Will the activity be carried out as part of the dismantling of a ship that is waste?",
       "section": "removal",
       "name": "miscellaneousDismantlingShips",
       "options": [
@@ -3769,7 +3930,7 @@
       ]
     },
     "/removal/miscellaneous/foreign-vessels": {
-    "title": "Will the activity be carried out in exercise of a right under rules of international law?",
+      "title": "Will the activity be carried out in exercise of a right under rules of international law?",
       "section": "removal",
       "name": "miscellaneousForeignVessels",
       "options": [
@@ -3878,7 +4039,7 @@
       ]
     },
     "/dredging/navigational-dredging/method": {
-    "title": "Will the activity be carried out in accordance with the authorisation?",
+      "title": "Will the activity be carried out in accordance with the authorisation?",
       "section": "dredging",
       "name": "navigationalDredgingMethod",
       "options": [
@@ -3887,7 +4048,7 @@
       ]
     },
     "/dredging/navigational-dredging/purpose": {
-    "title": "Is the purpose of the activity to enable the continued use of a navigational channel or area of seas by vessels?",
+      "title": "Is the purpose of the activity to enable the continued use of a navigational channel or area of seas by vessels?",
       "section": "dredging",
       "name": "navigationalDredgingPurpose",
       "options": [
@@ -3896,7 +4057,7 @@
       ]
     },
     "/dredging/navigational-dredging/maintenance": {
-    "title": "Will the dredging be undertaken at a site and at a depth where at least one previous dredging campaign has taken place in the last 10 years?",
+      "title": "Will the dredging be undertaken at a site and at a depth where at least one previous dredging campaign has taken place in the last 10 years?",
       "section": "dredging",
       "name": "navigationalDredgingMaintenance",
       "options": [
@@ -3905,7 +4066,7 @@
       ]
     },
     "/dredging/navigational-dredging/previous-purpose": {
-    "title": "Was the purpose of the previous dredge to enable the continued use of the area of sea by vessels?",
+      "title": "Was the purpose of the previous dredge to enable the continued use of the area of sea by vessels?",
       "section": "dredging",
       "name": "navigationalDredgingPreviousPurpose",
       "options": [
@@ -3931,7 +4092,7 @@
       ]
     },
     "/dredging/navigational-dredging/last-12months": {
-    "title": "Has any other dredging taken place at the site of the proposed dredge in the previous 12 months?",
+      "title": "Has any other dredging taken place at the site of the proposed dredge in the previous 12 months?",
       "section": "dredging",
       "name": "navigationalDredgingPreviousLast12Months",
       "options": [
@@ -3940,7 +4101,7 @@
       ]
     },
     "/dredging/navigational-dredging/last-12-quantity": {
-    "title": "Does the quantity of material dredged at the site in the previous 12 months combined with the amount proposed to be dredged exceed 1500m3?",
+      "title": "Does the quantity of material dredged at the site in the previous 12 months combined with the amount proposed to be dredged exceed 1500m3?",
       "section": "dredging",
       "name": "navigationalDredgingPreviousLast12MonthsQuantity",
       "options": [
@@ -3949,7 +4110,7 @@
       ]
     },
     "/dredging/navigational-dredging/obstruction": {
-    "title": "Is the activity one that will cause or be likely to cause obstruction or danger to navigation?",
+      "title": "Is the activity one that will cause or be likely to cause obstruction or danger to navigation?",
       "section": "dredging",
       "name": "navigationalDredgingObstruction",
       "options": [
@@ -3958,7 +4119,7 @@
       ]
     },
     "/dredging/navigational-dredging/mpa": {
-    "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
+      "title": "Will the activity take place in or within 200m of a Marine Protected Area?",
       "section": "deposit",
       "name": "navigationalDredgingMpa",
       "options": [
@@ -3967,7 +4128,7 @@
       ]
     },
     "/dredging/navigational-dredging/mpa-management": {
-    "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
+      "title": "Is the activity directly connected with or necessary to the management of the Marine Protected Area?",
       "section": "deposit",
       "name": "navigationalDredgingMpaManagement",
       "options": [
@@ -4006,7 +4167,7 @@
       ]
     },
     "/dredging/shellfish-propogation-cultivation": {
-    "title": "Is the purpose of the activity to enable the moving or removal shellfish within the sea as part of its propagation or cultivation?",
+      "title": "Is the purpose of the activity to enable the moving or removal shellfish within the sea as part of its propagation or cultivation?",
       "section": "dredging",
       "name": "shellfishPropogationCultivationPurpose",
       "options": [
@@ -4146,7 +4307,7 @@
       ]
     },
     "/dredging/emergency/flood-flood-risk": {
-    "title": "Will the activity be carried out by or on behalf of the Environment Agency",
+      "title": "Will the activity be carried out by or on behalf of the Environment Agency",
       "section": "dredging",
       "name": "emergencyFloodFloodRiskUndertaker",
       "options": [
@@ -4155,7 +4316,7 @@
       ]
     },
     "/dredging/emergency/flood-flood-risk/emergency": {
-    "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action in response to flood or imminent risk of flood?",
+      "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action in response to flood or imminent risk of flood?",
       "section": "dredging",
       "name": "emergencyFloodFloodRiskValidation",
       "options": [
@@ -4164,7 +4325,7 @@
       ]
     },
     "/dredging/emergency/cables-pipelines": {
-    "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline",
+      "title": "Does the activity relate to the inspection or repair of an existing cable or pipeline",
       "section": "dredging",
       "name": "emergencyCablesPipelines",
       "options": [
@@ -4173,7 +4334,7 @@
       ]
     },
     "/dredging/emergency/cables-pipelines/emergency": {
-    "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action?",
+      "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action?",
       "section": "dredging",
       "name": "emergencyCablesPipelinesValidation",
       "options": [
@@ -4182,7 +4343,7 @@
       ]
     },
     "/dredging/emergency/cables-pipelines/protection": {
-    "title": "Will the activity proposed under the exemption include the deposit of rock or other materials for the purpose of providing cable or pipeline protection?",
+      "title": "Will the activity proposed under the exemption include the deposit of rock or other materials for the purpose of providing cable or pipeline protection?",
       "section": "dredging",
       "name": "emergencyCablesPipelinesProtection",
       "options": [
@@ -4191,7 +4352,7 @@
       ]
     },
     "/dredging/emergency/cables-pipelines/protection/explosives": {
-    "title": "Does the activity involve the deposit or use of explosives?",
+      "title": "Does the activity involve the deposit or use of explosives?",
       "section": "dredging",
       "name": "emergencyCablesPipelinesExplosives",
       "options": [
@@ -4200,7 +4361,7 @@
       ]
     },
     "/dredging/emergency/coastguard": {
-    "title": "Will the activity be carried out by or on behalf the Secretary of State for Transport, acting through the Maritime and Coastguard Agency?",
+      "title": "Will the activity be carried out by or on behalf the Secretary of State for Transport, acting through the Maritime and Coastguard Agency?",
       "section": "dredging",
       "name": "emergencyCoastguardUndertaker",
       "options": [
@@ -4236,7 +4397,7 @@
       ]
     },
     "/dredging/emergency/salvage-operation": {
-    "title": "Will the activity be carried out in the course of a salvage operation for the purpose of ensuring the safety of a vessel or preventing pollution?",
+      "title": "Will the activity be carried out in the course of a salvage operation for the purpose of ensuring the safety of a vessel or preventing pollution?",
       "section": "dredging",
       "name": "emergencySalvageOperation",
       "options": [
@@ -4272,7 +4433,7 @@
       ]
     },
     "/dredging/safety-training/coastguard": {
-    "title": "Will the activity be carried out by or on behalf the Secretary of State for Transport, acting through the Maritime and Coastguard Agency?",
+      "title": "Will the activity be carried out by or on behalf the Secretary of State for Transport, acting through the Maritime and Coastguard Agency?",
       "section": "dredging",
       "name": "safetyTrainingCoastguardUndertaker",
       "options": [
@@ -4308,7 +4469,7 @@
       ]
     },
     "/dredging/safety-training/salvage-operation": {
-    "title": "Will the activity be carried out in the course of a salvage operation for the purpose of ensuring the safety of a vessel or preventing pollution?",
+      "title": "Will the activity be carried out in the course of a salvage operation for the purpose of ensuring the safety of a vessel or preventing pollution?",
       "section": "dredging",
       "name": "safetyTrainingSalvageOperation",
       "options": [
@@ -4388,7 +4549,7 @@
       ]
     },
     "/dredging/miscellaneous/crossrail-act": {
-    "title": "Will the activity be carried out within the limits of deviation for scheduled works in exercise of powers conferred by the Crossrail Act 2008 in relation to those works or any work connected with them?",
+      "title": "Will the activity be carried out within the limits of deviation for scheduled works in exercise of powers conferred by the Crossrail Act 2008 in relation to those works or any work connected with them?",
       "section": "dredging",
       "name": "dredgingMiscellaneousCrossrailAct",
       "options": [
@@ -4462,22 +4623,22 @@
         [
           "britishVessel",
           "From a British Vessel",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "britishMarineStructure",
           "From a British Marine structure",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "britishAircraft",
           "From a British aircraft",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "floatingContainer",
           "From a Floating container",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "other",
@@ -4494,12 +4655,12 @@
         [
           "inUk",
           "United Kingdom (except Scotland)",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "inUkMLA",
           "UK marine licensing area",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "none",
@@ -4516,17 +4677,17 @@
         [
           "britishVessel",
           "On a British Vessel",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "britishMarineStructure",
           "On a British Marine Structure",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "controlledFloatingContainer",
           "On a floating container controlled from a British vessel, British aircraft, or British marine structure.",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "other",
@@ -4540,7 +4701,7 @@
       "section": "elsewhereIncineration",
       "name": "loadedInUk",
       "options": [
-        "/licence-required-no-exemption",
+        "/licence-required-no-exemption-no-self-service",
         "/licence-not-required"
       ]
     },
@@ -4552,17 +4713,17 @@
         [
           "britishVessel",
           "From a British vessel",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "britishAircraft",
           "From a British aircraft",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "britishMarineStructure",
           "From a British marine structure",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "other",
@@ -4579,12 +4740,12 @@
         [
           "inUk",
           "United Kingdom (except Scotland)",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "inUkMLA",
           "UK marine licensing area (unless towing or propelling began outside of that area)",
-          "/licence-required-no-exemption"
+          "/licence-required-no-exemption-no-self-service"
         ],
         [
           "none",
