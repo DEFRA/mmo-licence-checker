@@ -49,7 +49,7 @@
       "title": "Licence is not required",
       "components": [
         {
-          "html": "Based on the information provided a marine licence is not required for the activity.  Based on the information provided the activity requires a\r\nlicence for the element that falls to be located within 12NM. No exemption is available. Please note that a marine licence is required for the deposit of a cable protection associated with the laying of a cable"
+          "html": "Based on the information provided a marine licence is not required for the activity.  Based on the information provided the activity requires a\r\nlicence for the element that falls to be located within 12NM. No exemption is available. Please note that a marine licence is required for the deposit of any associated cable protection"
         }
       ]
     },
@@ -393,7 +393,7 @@
       "title": "Licence is required",
       "components": [
         {
-          "html": "You indicated that you activity involved the laying of a cable, part of which would fall to be located within 12NM and part outside of 12NM of the UK. Based on the information provided the activity requires a\r\nlicence for the element that falls to be located within 12NM. No exemption is available. Further it should be noted that a marine licence is required for the deposit of a cable protection proposed beyond 12 NM \r\n<br>\r\n<br>\r\n<a href=\"#\">Apply for a marine licence</a>"
+          "html": "You indicated that you activity involved the laying of a cable, part of which would fall to be located within 12NM and part outside of 12NM of the UK. Based on the information provided the activity requires a\r\nlicence for the element that falls to be located within 12NM. No exemption is available. Further it should be noted that a marine licence is required for the deposit of any associated cable protection both inside and beyond 12 NM \r\n<br>\r\n<br>\r\n<a href=\"#\">Apply for a marine licence</a>"
         }
       ]
     },
@@ -475,7 +475,8 @@
         [
           "maintenance",
           "Maintenance of existing structures and assets",
-          "/construction/maintenance"
+          "/construction/maintenance",
+          "Maintenance means the upkeep or repair of an existing structure or asset within its existing 3 dimensional boundaries"
         ],
         [
           "new",
@@ -489,6 +490,12 @@
       "section": "construction",
       "name": "maintenanceActivityType",
       "options": [
+        [
+          "emergency",
+          "Emergency maintenance",
+          "/construction/maintenance/emergency",
+          "flood defence and cables and pipeline inspection and repair"
+        ],
         [
           "mooringOrNavigation",
           "Moorings or aids to navigation",
@@ -524,6 +531,73 @@
           "Other",
           "/licence-required-no-exemption"
         ]
+      ]
+    },
+    "/construction/maintenance/emergency": {
+      "title": "What does your activity relate to?",
+      "section": "construction",
+      "name": "maintenanceEmergencyActivityType",
+      "options": [
+        [
+          "floodFloodRisk",
+          "Emergency works in response to flood or imminent risk of a flood",
+          "/construction/maintenance/emergency/flood"
+        ],
+        [
+          "cablesAndPipelines",
+          "Emergency inspection and repair of a cable or pipeline",
+          "/construction/maintenance/emergency/cables-pipelines"
+        ],
+        [
+          "other",
+          "Other",
+          "/licence-required-no-exemption"
+        ]
+      ]
+    },
+    "/construction/maintenance/emergency/flood": {
+      "title": "Will the activity be carried out by or on behalf of the Environment Agency",
+      "section": "construction",
+      "name": "maintenanceemergencyFloodUndertaker",
+      "options": [
+        "/construction/maintenance/emergency/flood/emergency",
+        "/licence-required-no-exemption"
+      ]
+    },
+    "/construction/maintenance/emergency/flood/emergency": {
+      "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action in response to flood or imminent risk of flood?",
+      "section": "construction",
+      "name": "emergencymainteanceFloodEmergency",
+      "options": [
+        "/licence-not-required-exemption-available-article-20",
+        "/licence-required-no-exemption"
+      ]
+    },
+    "/construction/maintenance/emergency/cables-pipelines": {
+      "title": "Are the circumstances serious, unexpected and potentially dangerous requiring immediate action?",
+      "section": "construction",
+      "name": "emergencyMaintenanceCablesPipelinesEmergency",
+      "options": [
+        "/deposit/emergency-safety-pollution-response-accident-investigation/cables-pipelines/protection",
+        "/licence-required-no-exemption"
+      ]
+    },
+    "/construction/maintenance/emergency/cables-pipelines/protection": {
+      "title": "Will the activity proposed under the exemption include the deposit of rock or other materials for the purpose of providing cable or pipeline protection?",
+      "section": "construction",
+      "name": "emergencyMainteanceCablesPipelinesProtection",
+      "options": [
+        "/licence-required-no-exemption",
+        "/deposit/emergency-safety-pollution-response-accident-investigation/cables-pipelines/explosives"
+      ]
+    },
+    "/construction/maintenance/emergency/cables-pipelines/explosives": {
+      "title": "Does the activity involve the deposit or use of explosives?",
+      "section": "construction",
+      "name": "emergencyMaintenanceCablesPipelinesExplosives",
+      "options": [
+        "/licence-required-no-exemption",
+        "/licence-not-required-exemption-available-article-34"
       ]
     },
     "/construction/maintenance/moorings": {
@@ -696,13 +770,19 @@
           "transferOfData",
           "The transfer of data",
           "/construction/maintenance/cables/location",
-          "e.g. international telecommunications cables"
+          "This type of cable allows the transfers of electricity from one place to another. This includes interconnector cables, which exchange electricity to and from continental Europe and beyond."
         ],
         [
           "transfer of electricity",
           "The transfer of electricity",
           "/construction/maintenance/cables/location",
-          "e.g. interconnector cables between continents"
+          "This type of cable transfers data from one place to another."
+        ],
+        [
+          "renewableEnergyExportCable",
+          "Renewable energy export cable",
+          "/licence-required-no-exemption",
+          "This type of cable transfers data from one place to another."
         ],
         [
           "other",
@@ -1004,7 +1084,7 @@
       ]
     },
     "/construction/new/cables": {
-      "title": "What is the purpose of the cable being maintained?",
+      "title": "What is the purpose of the cable to be laid?",
       "section": "construction",
       "name": "cablesPurpose",
       "options": [
@@ -1012,13 +1092,19 @@
           "transferOfData",
           "The transfer of data",
           "/construction/new/cables/location",
-          "e.g. international telecommunications cables"
+          "This type of cable allows the transfers of electricity from one place to another. This includes interconnector cables, which exchange electricity to and from continental Europe and beyond."
         ],
         [
-          "transfer of electricity",
+          "transferOfElectricity",
           "The transfer of electricity",
           "/construction/new/cables/location",
-          "e.g. interconnector cables between continents"
+          "This type of cable transfers data from one place to another."
+        ],
+        [
+          "renewableEnergyExportCable",
+          "Renewable energy export cable",
+          "/licence-required-no-exemption",
+          "This type of cable transfers data from one place to another."
         ],
         [
           "other",
@@ -2620,7 +2706,7 @@
       "title": "Is the substance or object to be removed from the seabed?",
       "section": "removal",
       "name": "isFromSeaBed",
-      "hint": "‘Seabed’ comprises the intertidal area below Mean High Water Springs mark and the ground under the sea including anything laying on it such as a wreck",
+      "hint": "‘Seabed’ comprises the intertidal area below the mean high water springs tide mark and the ground under the sea including anything laying on it such as a wreck",
       "options": [
         "/removal/method",
         "/licence-not-required"
